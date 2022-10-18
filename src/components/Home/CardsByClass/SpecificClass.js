@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { options } from "../../../API-Options";
-
+import { CardContainer, ClassCards } from "./CardsByClass.styled";
 export default function SpecificClass() {
   const { name } = useParams();
   const [classCards, setClassCards] = React.useState(null);
@@ -25,10 +25,18 @@ export default function SpecificClass() {
     return <h1>loading</h1>;
   } else {
     classCards.sort((a, b) => (a.name > b.name ? 1 : -1));
-    console.log(classCards);
+    const noDuplicates = [
+      ...new Map(classCards.map((card) => [card.name, card])).values(),
+    ];
+    let cardImages = noDuplicates.map((classCard) => (
+      <CardContainer key={classCard.cardId}>
+        <img src={classCard.img} alt="" />
+      </CardContainer>
+    ));
     return (
       <div>
         <h1>{name}</h1>
+        <ClassCards>{cardImages}</ClassCards>
       </div>
     );
   }
