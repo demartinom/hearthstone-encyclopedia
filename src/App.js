@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import { options } from "./API-Options";
 import { Routes, Route } from "react-router-dom";
 import CardsByClass from "./components/Home/CardsByClass/CardsByClass";
+import SpecificClass from "./components/Home/CardsByClass/SpecificClass";
 
 function App() {
   const [metadata, setMetadata] = React.useState(null);
@@ -35,6 +36,7 @@ function App() {
             path="/classes"
             element={<CardsByClass classes={classesArray} />}
           />
+          <Route path="/classes/:name" element={<SpecificClass />} />
         </Routes>
       </div>
     );
