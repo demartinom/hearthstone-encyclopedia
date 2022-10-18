@@ -24,12 +24,13 @@ export default function SpecificClass() {
   if (classCards === null) {
     return <h1>loading</h1>;
   } else {
-    classCards.sort((a, b) => (a.name > b.name ? 1 : -1));
     const noDuplicates = [
       ...new Map(classCards.map((card) => [card.name, card])).values(),
     ];
+    noDuplicates.sort((a, b) => (a.name > b.name ? 1 : -1));
     let cardImages = noDuplicates.map((classCard) => (
       <CardContainer key={classCard.cardId}>
+        <p>{classCard.name}</p>
         <img src={classCard.img} alt="" />
       </CardContainer>
     ));
