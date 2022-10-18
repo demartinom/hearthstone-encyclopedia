@@ -1,8 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function CardsByClass(props) {
   const classesList = props.classes.map((gameClass) => (
-    <h2 key={gameClass}>{gameClass}</h2>
+    <Link to={`/classes/${gameClass}`} key={gameClass}>
+      <h2>{gameClass}</h2>
+    </Link>
   ));
   return (
     <div>
