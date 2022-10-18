@@ -1,1 +1,1 @@
-#Hearthstone Encyclopedia
+# Hearthstone Encyclopedia
