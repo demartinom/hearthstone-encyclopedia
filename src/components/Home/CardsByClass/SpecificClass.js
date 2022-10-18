@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { options } from "../../../API-Options";
 import { CardContainer, ClassCards } from "./CardsByClass.styled";
+
 export default function SpecificClass() {
   const { name } = useParams();
   const [classCards, setClassCards] = React.useState(null);
@@ -30,7 +31,6 @@ export default function SpecificClass() {
     noDuplicates.sort((a, b) => (a.name > b.name ? 1 : -1));
     let cardImages = noDuplicates.map((classCard) => (
       <CardContainer key={classCard.cardId}>
-        <p>{classCard.name}</p>
         <img src={classCard.img} alt="" />
       </CardContainer>
     ));
