@@ -31,7 +31,10 @@ function App() {
         <GlobalStyle />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/classes" element={<CardsByClass />} />
+          <Route
+            path="/classes"
+            element={<CardsByClass classes={classesArray} />}
+          />
         </Routes>
       </div>
     );
