@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { options } from "../../../API-Options";
 import { CardContainer, ClassCards } from "./CardsByClass.styled";
+import { Link } from "react-router-dom";
 
 export default function SpecificClass() {
   const { name } = useParams();
@@ -16,7 +17,11 @@ export default function SpecificClass() {
         setClassCards(
           response.filter(
             (response) =>
-              response.type === "Minion" || response.type === "Spell"
+             ( response.type === "Minion" ||
+              response.type === "Spell" ||
+              response.type === "Weapon" ||
+              (response.type === "Hero" && response.rarity === "Legendary") )
+             && response.cardSet !== "Unknown"
           )
         )
       )
@@ -31,7 +36,9 @@ export default function SpecificClass() {
     noDuplicates.sort((a, b) => (a.name > b.name ? 1 : -1));
     let cardImages = noDuplicates.map((classCard) => (
       <CardContainer key={classCard.cardId}>
-        <img src={classCard.img} alt="" />
+        <Link to={`/${classCard.playerClass}/${classCard.name}`}>
+          <img src={classCard.img} alt="" />
+        </Link>
       </CardContainer>
     ));
     return (
