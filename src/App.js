@@ -15,7 +15,12 @@ function App() {
       .catch((err) => console.error(err));
   }, []);
   if (metadata === null) {
-    return <h1>loading</h1>;
+    return (
+      <>
+        <GlobalStyle />
+        <h1>loading</h1>
+      </>
+    );
   } else {
     const classesArray = metadata.classes
       .sort()
