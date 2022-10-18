@@ -3,6 +3,7 @@ import { GlobalStyle } from "./GlobalStyles";
 import Home from "./components/Home/Home";
 import { options } from "./API-Options";
 import { Routes, Route } from "react-router-dom";
+import CardsByClass from "./components/Home/CardsByClass/CardsByClass";
 
 function App() {
   const [metadata, setMetadata] = React.useState(null);
@@ -30,6 +31,7 @@ function App() {
         <GlobalStyle />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/classes" element={<CardsByClass />} />
         </Routes>
       </div>
     );
