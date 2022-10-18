@@ -41,7 +41,7 @@ function App() {
             path="/classes"
             element={<CardsByClass classes={classesArray} />}
           />
-          <Route path="/classes/:name" element={<SpecificClass />} />
+          <Route path="/classes/:name/allcards" element={<SpecificClass />} />
         </Routes>
       </div>
     );
