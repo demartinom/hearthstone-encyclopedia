@@ -12,14 +12,28 @@ function App() {
       .then((response) => setMetadata(response))
       .catch((err) => console.error(err));
   }, []);
-  return (
-    <div className="App">
-      <GlobalStyle />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </div>
-  );
+  if (metadata === null) {
+    return <h1>loading</h1>;
+  } else {
+    const classesArray = metadata.classes
+      .sort()
+      .filter(
+        (gameClass) =>
+          gameClass !== "Death Knight" &&
+          gameClass !== "Whizbang" &&
+          gameClass !== "Dream" &&
+          gameClass !== "Neutral"
+      );
+    classesArray.push(metadata.classes[6]);
+    return (
+      <div className="App">
+        <GlobalStyle />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+    );
+  }
 }
 
 export default App;
