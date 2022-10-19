@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import CardsByClass from "./components/Home/CardsByClass/CardsByClass";
 import SpecificClass from "./components/Home/CardsByClass/SpecificClass";
 import SpecificCard from "./components/SpecificCard/SpecificCard";
+import CardBySet from "./components/CardBySet/CardBySet";
 
 function App() {
   const [metadata, setMetadata] = React.useState(null);
@@ -44,6 +45,7 @@ function App() {
           />
           <Route path="/classes/:name/allcards" element={<SpecificClass />} />
           <Route path="/:class/:name" element={<SpecificCard />} />
+          <Route path="/sets" element={<CardBySet />} />
         </Routes>
       </div>
     );
