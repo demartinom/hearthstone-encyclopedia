@@ -24,6 +24,7 @@ function App() {
       </>
     );
   } else {
+    const cardSets = metadata.sets;
     const classesArray = metadata.classes
       .sort()
       .filter(
@@ -45,7 +46,7 @@ function App() {
           />
           <Route path="/classes/:name/allcards" element={<SpecificClass />} />
           <Route path="/:class/:name" element={<SpecificCard />} />
-          <Route path="/sets" element={<CardBySet />} />
+          <Route path="/sets" element={<CardBySet sets={cardSets} />} />
         </Routes>
       </div>
     );
