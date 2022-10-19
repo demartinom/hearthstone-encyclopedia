@@ -1,6 +1,7 @@
 import React from "react";
 import { options } from "../../API-Options";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function SpecificSet() {
   const { set } = useParams();
@@ -17,6 +18,11 @@ export default function SpecificSet() {
   if (setData === null) {
     return <h1>Loading</h1>;
   } else {
-    return <div></div>;
+    const setCards = setData.map((card) => (
+      <Link key={card.cardId} to={`/${card.className}/${card.name}`}>
+        <img src={card.img} alt="" />
+      </Link>
+    ));
+    return <div>{setCards}</div>;
   }
 }
