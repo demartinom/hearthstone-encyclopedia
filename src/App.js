@@ -11,7 +11,7 @@ import SpecificSet from "./components/CardBySet/SpecificSet";
 import Favorites from "./components/Favorites/Favorites";
 
 function App() {
-  const [favorites, setFavorites] = React.useState(null);
+  const [favorites, setFavorites] = React.useState([]);
   const [metadata, setMetadata] = React.useState(null);
   React.useState(() => {
     fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/info", options)
@@ -65,9 +65,17 @@ function App() {
             path="/classes"
             element={<CardsByClass classes={classesArray} />}
           />
-          <Route path="/favorites" element={<Favorites />} />
+          <Route
+            path="/favorites"
+            element={<Favorites favorites={favorites} />}
+          />
           <Route path="/classes/:name/allcards" element={<SpecificClass />} />
-          <Route path="/:class/:name" element={<SpecificCard />} />
+          <Route
+            path="/:class/:name"
+            element={
+              <SpecificCard setFavorite={setFavorites} favorites={favorites} />
+            }
+          />
           <Route path="/sets" element={<CardBySet sets={cardSets} />} />
           <Route path="/sets/:set" element={<SpecificSet />} />
         </Routes>
