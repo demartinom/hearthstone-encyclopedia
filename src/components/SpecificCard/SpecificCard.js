@@ -19,7 +19,13 @@ export default function SpecificCard() {
     return <h1>Loading</h1>;
   } else {
     const cardInfo = cardData[0];
-    const noSymbols = cardInfo.text.replace("[x]", "").replace("$", "");
+    console.log(cardInfo.text);
+    const noSymbols = cardInfo.text
+      .replace("[x]", "")
+      .replace("$", "")
+      .replace("__", "")
+      .replace("._", ".")
+      .replace("-$", "-");
     return (
       <div>
         <img src={cardInfo.img} alt="" />
