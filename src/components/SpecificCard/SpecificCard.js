@@ -1,6 +1,7 @@
 import React from "react";
 import { options } from "../../API-Options";
 import { useParams } from "react-router-dom";
+import ReactHtmlParser from "react-html-parser";
 
 export default function SpecificCard() {
   const { name } = useParams();
@@ -17,6 +18,15 @@ export default function SpecificCard() {
   if (cardData === null) {
     return <h1>Loading</h1>;
   } else {
-    return <div></div>;
+    const cardInfo = cardData[0];
+    return (
+      <div>
+        <img src={cardInfo.img} alt="" />
+        <h1>{cardInfo.name}</h1>
+        <h2>{cardInfo.cardSet}</h2>
+        <h2>{cardInfo.rarity}</h2>
+        <p>{ReactHtmlParser(cardInfo.text)}</p>
+      </div>
+    );
   }
 }
