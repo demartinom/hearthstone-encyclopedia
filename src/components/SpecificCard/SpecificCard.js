@@ -19,7 +19,6 @@ export default function SpecificCard() {
     return <h1>Loading</h1>;
   } else {
     const cardInfo = cardData[0];
-    console.log(cardInfo.text);
     const noSymbols = cardInfo.text
       .replace("[x]", "")
       .replace("$", "")
@@ -34,6 +33,7 @@ export default function SpecificCard() {
         <h2>{cardInfo.rarity}</h2>
         {cardInfo.race && <p>{cardInfo.race}</p>}
         {cardInfo.spellSchool && <p>{cardInfo.spellSchool}</p>}
+        {cardInfo.type === "Location" && <p>{cardInfo.type}</p>}
         <p>{ReactHtmlParser(noSymbols)}</p>
       </div>
     );

@@ -19,6 +19,7 @@ export default function SpecificClass() {
             (card) =>
               (card.type === "Minion" ||
                 card.type === "Spell" ||
+                card.type === "Location" ||
                 card.type === "Weapon" ||
                 (card.type === "Hero" && card.rarity === "Legendary")) &&
               card.cardSet !== "Unknown"
