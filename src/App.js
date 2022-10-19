@@ -40,7 +40,8 @@ function App() {
           setName !== "Wild Event" &&
           setName !== "Battlegrounds" &&
           setName !== "Mercenaries" &&
-          setName !== "Wailing Caverns"
+          setName !== "Wailing Caverns" &&
+          setName !== "Promo"
       )
       .reverse();
     const classesArray = metadata.classes
