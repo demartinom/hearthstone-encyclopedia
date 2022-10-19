@@ -3,6 +3,8 @@ import { GlobalStyle } from "./GlobalStyles";
 import Home from "./components/Home/Home";
 import { options } from "./API-Options";
 import { Routes, Route } from "react-router-dom";
+import CardsByClass from "./components/Home/CardsByClass/CardsByClass";
+import SpecificClass from "./components/Home/CardsByClass/SpecificClass";
 
 function App() {
   const [metadata, setMetadata] = React.useState(null);
@@ -13,7 +15,12 @@ function App() {
       .catch((err) => console.error(err));
   }, []);
   if (metadata === null) {
-    return <h1>loading</h1>;
+    return (
+      <>
+        <GlobalStyle />
+        <h1>loading</h1>
+      </>
+    );
   } else {
     const classesArray = metadata.classes
       .sort()
@@ -30,6 +37,11 @@ function App() {
         <GlobalStyle />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route
+            path="/classes"
+            element={<CardsByClass classes={classesArray} />}
+          />
+          <Route path="/classes/:name/allcards" element={<SpecificClass />} />
         </Routes>
       </div>
     );

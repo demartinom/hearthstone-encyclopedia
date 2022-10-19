@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div>
@@ -11,7 +11,7 @@ export default function Home() {
         advanced search.
       </h2>
       <a href="#">Find Cards by Set</a>
-      <a href="#">Find Cards by Class</a>
+      <Link to='/classes'>Find Cards by Class</Link>
     </div>
   );
 }
