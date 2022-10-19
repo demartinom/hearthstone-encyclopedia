@@ -16,12 +16,12 @@ export default function SpecificClass() {
       .then((response) =>
         setClassCards(
           response.filter(
-            (response) =>
-             ( response.type === "Minion" ||
-              response.type === "Spell" ||
-              response.type === "Weapon" ||
-              (response.type === "Hero" && response.rarity === "Legendary") )
-             && response.cardSet !== "Unknown"
+            (card) =>
+              (card.type === "Minion" ||
+                card.type === "Spell" ||
+                card.type === "Weapon" ||
+                (card.type === "Hero" && card.rarity === "Legendary")) &&
+              card.cardSet !== "Unknown"
           )
         )
       )
