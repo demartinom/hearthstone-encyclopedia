@@ -10,8 +10,8 @@ export default function Home() {
         You can begin by searching for cards by set, by class, or by using the
         advanced search.
       </h2>
-      <a href="#">Find Cards by Set</a>
-      <Link to='/classes'>Find Cards by Class</Link>
+      <Link to="/sets">Find Cards by Set</Link>
+      <Link to="/classes">Find Cards by Class</Link>
     </div>
   );
 }
