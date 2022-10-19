@@ -32,6 +32,8 @@ export default function SpecificCard() {
         <h1>{cardInfo.name}</h1>
         <h2>{cardInfo.cardSet}</h2>
         <h2>{cardInfo.rarity}</h2>
+        {cardInfo.race && <p>{cardInfo.race}</p>}
+        {cardInfo.spellSchool && <p>{cardInfo.spellSchool}</p>}
         <p>{ReactHtmlParser(noSymbols)}</p>
       </div>
     );
