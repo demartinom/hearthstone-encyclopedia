@@ -24,7 +24,9 @@ export default function SpecificCard() {
       .replace("$", "")
       .replace("__", "")
       .replace("._", ".")
-      .replace("-$", "-");
+      .replace("-$", "-")
+      .replace("(@)", "(<b>Invoke</b> twice to upgrade.)")
+      .replace("@", "");
     return (
       <div>
         <img src={cardInfo.img} alt="" />
