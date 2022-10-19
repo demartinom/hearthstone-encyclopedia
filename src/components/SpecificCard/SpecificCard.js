@@ -19,13 +19,14 @@ export default function SpecificCard() {
     return <h1>Loading</h1>;
   } else {
     const cardInfo = cardData[0];
+    let noSymbols = cardInfo.text.replace("$", "");
     return (
       <div>
         <img src={cardInfo.img} alt="" />
         <h1>{cardInfo.name}</h1>
         <h2>{cardInfo.cardSet}</h2>
         <h2>{cardInfo.rarity}</h2>
-        <p>{ReactHtmlParser(cardInfo.text)}</p>
+        <p>{ReactHtmlParser(noSymbols)}</p>
       </div>
     );
   }
