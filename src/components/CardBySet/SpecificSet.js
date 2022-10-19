@@ -13,6 +13,10 @@ export default function SpecificSet() {
       .then((response) => response.json())
       .then((response) => setSetData(response))
       .catch((err) => console.error(err));
-  },[]);
-  return <div></div>;
+  }, []);
+  if (setData === null) {
+    return <h1>Loading</h1>;
+  } else {
+    return <div></div>;
+  }
 }
