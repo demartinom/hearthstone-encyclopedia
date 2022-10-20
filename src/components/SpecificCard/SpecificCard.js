@@ -34,13 +34,18 @@ export default function SpecificCard(props) {
     function addToFavorites() {
       props.setFavorite((prevFavorites) => [...prevFavorites, cardInfo]);
     }
+    function removeFromFavorites() {
+      props.setFavorite((prevFavorites) =>
+        prevFavorites.filter((card) => card.cardId !== cardInfo.cardId)
+      );
+    }
     return (
       <div>
         <img src={cardInfo.img} alt="" />
         {props.favorites.filter((e) => e.name === cardInfo.name).length ===
           0 && <FontAwesomeIcon icon={outlineStar} onClick={addToFavorites} />}
         {props.favorites.filter((e) => e.name === cardInfo.name).length > 0 && (
-          <FontAwesomeIcon icon={solidStar} />
+          <FontAwesomeIcon icon={solidStar} onClick={removeFromFavorites} />
         )}
         <h1>{cardInfo.name}</h1>
         <h2>{cardInfo.cardSet}</h2>
