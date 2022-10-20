@@ -22,7 +22,6 @@ export default function SpecificCard(props) {
     return <h1>Loading</h1>;
   } else {
     const cardInfo = cardData[0];
-    console.log(cardInfo)
     const noSymbols = cardInfo.text
       .replace("[x]", "")
       .replace("$", "")
