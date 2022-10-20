@@ -12,6 +12,8 @@ export default function Home() {
       </h2>
       <Link to="/sets">Find Cards by Set</Link>
       <Link to="/classes">Find Cards by Class</Link>
+      <Link to={"/search"}>Search for Cards</Link>
+      <Link to={"/favorites"}>See Your Saved Favorites</Link>
     </div>
   );
 }
