@@ -35,10 +35,21 @@ export default function Search() {
       <img src={card.img} alt="" />
     </Link>
   ));
+  function handleKeyPress(e) {
+    if (e.key === "Enter") {
+      changeButton();
+    }
+  }
   return (
     <div>
       <h1>Find a card</h1>
-      <input type="search" name="Search" id="Search" onChange={updateSearch} />
+      <input
+        type="search"
+        name="Search"
+        id="Search"
+        onChange={updateSearch}
+        onKeyUp={handleKeyPress}
+      />
       <button onClick={changeButton}>Search</button>
       {results.length > 0 && searchResults}
     </div>
