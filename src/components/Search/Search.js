@@ -8,6 +8,7 @@ export default function Search() {
   const [results, setResults] = React.useState([]);
   React.useEffect(() => {
     if (buttonClicked === true) {
+      setResults("loading");
       fetch(
         `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/search/${search}?collectible=1`,
         options
@@ -30,11 +31,19 @@ export default function Search() {
   function changeButton() {
     setButtonClicked(true);
   }
-  const searchResults = results.map((card) => (
-    <Link key={card.cardId} to={`/${card.playerClass}/${card.name}`}>
-      <img src={card.img} alt="" />
-    </Link>
-  ));
+  let searchResults = "";
+  function typeofResult() {
+    if (typeof results === "string") {
+      searchResults = <h1>Loading</h1>;
+    } else {
+      searchResults = results.map((card) => (
+        <Link key={card.cardId} to={`/${card.playerClass}/${card.name}`}>
+          <img src={card.img} alt="" />
+        </Link>
+      ));
+    }
+  }
+  typeofResult();
   function handleKeyPress(e) {
     if (e.key === "Enter") {
       changeButton();
