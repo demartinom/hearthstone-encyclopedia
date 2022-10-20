@@ -36,7 +36,11 @@ export default function SpecificCard(props) {
     return (
       <div>
         <img src={cardInfo.img} alt="" />
-        <FontAwesomeIcon icon={outlineStar} onClick={addToFavorites} />
+        {props.favorites.filter((e) => e.name === cardInfo.name).length ===
+          0 && <FontAwesomeIcon icon={outlineStar} onClick={addToFavorites} />}
+        {props.favorites.filter((e) => e.name === cardInfo.name).length > 0 && (
+          <FontAwesomeIcon icon={solidStar} />
+        )}
         <h1>{cardInfo.name}</h1>
         <h2>{cardInfo.cardSet}</h2>
         <h2>{cardInfo.rarity}</h2>
