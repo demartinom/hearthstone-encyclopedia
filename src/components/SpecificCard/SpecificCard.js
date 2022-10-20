@@ -15,7 +15,9 @@ export default function SpecificCard(props) {
       options
     )
       .then((response) => response.json())
-      .then((response) => setCardData(response))
+      .then((response) =>
+        setCardData(response.filter((card) => card.cardSet !== "Unknown"))
+      )
       .catch((err) => console.error(err));
   }, []);
   if (cardData === null) {
