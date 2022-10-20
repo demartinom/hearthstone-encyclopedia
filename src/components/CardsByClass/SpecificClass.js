@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { options } from "../../../API-Options";
+import { options } from "../../API-Options";
 import { CardContainer, ClassCards } from "./CardsByClass.styled";
 import { Link } from "react-router-dom";
 
