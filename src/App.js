@@ -14,7 +14,7 @@ function App() {
   const [favorites, setFavorites] = React.useState([]);
   React.useEffect(() => {
     const savedFavorites = localStorage.getItem("favorites");
-    setFavorites((prevFavorites) => JSON.parse(savedFavorites));
+    setFavorites(JSON.parse(savedFavorites));
   }, []);
   React.useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
