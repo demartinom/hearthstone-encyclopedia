@@ -10,6 +10,7 @@ import CardBySet from "./components/CardBySet/CardBySet";
 import SpecificSet from "./components/CardBySet/SpecificSet";
 import Favorites from "./components/Favorites/Favorites";
 import Search from "./components/Search/Search";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   const [favorites, setFavorites] = React.useState([]);
@@ -67,6 +68,7 @@ function App() {
     return (
       <div className="App">
         <GlobalStyle />
+        <NavBar />
         <Routes>
           <Route path="/search" element={<Search />} />
           <Route path="/" element={<Home />} />
