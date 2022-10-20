@@ -19,7 +19,7 @@ export default function SpecificSet() {
     return <h1>Loading</h1>;
   } else {
     const setCards = setData.map((card) => (
-      <Link key={card.cardId} to={`/${card.className}/${card.name}`}>
+      <Link key={card.cardId} to={`/${card.playerClass}/${card.name}`}>
         <img src={card.img} alt="" />
       </Link>
     ));
