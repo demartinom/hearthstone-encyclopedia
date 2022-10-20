@@ -12,6 +12,13 @@ import Favorites from "./components/Favorites/Favorites";
 
 function App() {
   const [favorites, setFavorites] = React.useState([]);
+  React.useEffect(() => {
+    const savedFavorites = localStorage.getItem("favorites");
+    setFavorites((prevFavorites) => JSON.parse(savedFavorites));
+  }, []);
+  React.useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
   const [metadata, setMetadata] = React.useState(null);
   React.useState(() => {
     fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/info", options)
