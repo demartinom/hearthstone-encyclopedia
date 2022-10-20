@@ -2,8 +2,11 @@ import React from "react";
 import { options } from "../../API-Options";
 import { useParams } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as outlineStar } from "@fortawesome/free-regular-svg-icons";
 
-export default function SpecificCard() {
+export default function SpecificCard(props) {
   const { name } = useParams();
   const [cardData, setCardData] = React.useState(null);
   React.useEffect(() => {
@@ -26,16 +29,30 @@ export default function SpecificCard() {
       .replace("._", ".")
       .replace("-$", "-")
       .replace("(@)", "(<b>Invoke</b> twice to upgrade.)")
-      .replace("@", "");
+      .replace("@", "")
+      .replace("the_", "the");
+    function addToFavorites() {
+      props.setFavorite((prevFavorites) => [...prevFavorites, cardInfo]);
+    }
+    function removeFromFavorites() {
+      props.setFavorite((prevFavorites) =>
+        prevFavorites.filter((card) => card.cardId !== cardInfo.cardId)
+      );
+    }
     return (
       <div>
         <img src={cardInfo.img} alt="" />
+        {props.favorites.filter((e) => e.name === cardInfo.name).length ===
+          0 && <FontAwesomeIcon icon={outlineStar} onClick={addToFavorites} />}
+        {props.favorites.filter((e) => e.name === cardInfo.name).length > 0 && (
+          <FontAwesomeIcon icon={solidStar} onClick={removeFromFavorites} />
+        )}
         <h1>{cardInfo.name}</h1>
         <h2>{cardInfo.cardSet}</h2>
         <h2>{cardInfo.rarity}</h2>
-        {cardInfo.race && <p>{cardInfo.race}</p>}
-        {cardInfo.spellSchool && <p>{cardInfo.spellSchool}</p>}
-        {cardInfo.type === "Location" && <p>{cardInfo.type}</p>}
+        {cardInfo.race && <p>Race: {cardInfo.race}</p>}
+        {cardInfo.spellSchool && <p>Spell School: {cardInfo.spellSchool}</p>}
+        {cardInfo.type === "Location" && <p>Type: {cardInfo.type}</p>}
         <p>{ReactHtmlParser(noSymbols)}</p>
       </div>
     );
