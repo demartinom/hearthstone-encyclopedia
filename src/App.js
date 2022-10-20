@@ -74,7 +74,9 @@ function App() {
           />
           <Route
             path="/favorites"
-            element={<Favorites favorites={favorites} />}
+            element={
+              <Favorites favorites={favorites} setFavorites={setFavorites} />
+            }
           />
           <Route path="/classes/:name/allcards" element={<SpecificClass />} />
           <Route
