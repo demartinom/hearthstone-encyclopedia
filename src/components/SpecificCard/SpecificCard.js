@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as outlineStar } from "@fortawesome/free-regular-svg-icons";
 
-export default function SpecificCard() {
+export default function SpecificCard(props) {
   const { name } = useParams();
   const [cardData, setCardData] = React.useState(null);
   React.useEffect(() => {
@@ -30,10 +30,13 @@ export default function SpecificCard() {
       .replace("-$", "-")
       .replace("(@)", "(<b>Invoke</b> twice to upgrade.)")
       .replace("@", "");
+    function addToFavorites() {
+      props.setFavorite((prevFavorites) => [...prevFavorites, cardInfo]);
+    }
     return (
       <div>
         <img src={cardInfo.img} alt="" />
-        <FontAwesomeIcon icon={outlineStar} />
+        <FontAwesomeIcon icon={outlineStar} onClick={addToFavorites} />
         <h1>{cardInfo.name}</h1>
         <h2>{cardInfo.cardSet}</h2>
         <h2>{cardInfo.rarity}</h2>
