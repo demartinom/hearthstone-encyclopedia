@@ -1,5 +1,6 @@
 import React from "react";
 import { options } from "../../API-Options";
+import { Link } from "react-router-dom";
 
 export default function Search() {
   const [search, setSearch] = React.useState("");
@@ -24,7 +25,9 @@ export default function Search() {
     setButtonClicked(true);
   }
   const searchResults = results.map((card) => (
-    <img src={card.img} alt="" key={card.cardId}></img>
+    <Link key={card.cardId} to={`/${card.playerClass}/${card.name}`}>
+      <img src={card.img} alt="" />
+    </Link>
   ));
   return (
     <div>
