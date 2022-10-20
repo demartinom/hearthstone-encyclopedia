@@ -13,7 +13,13 @@ export default function Search() {
         options
       )
         .then((response) => response.json())
-        .then((response) => setResults(response))
+        .then((response) =>
+          setResults(
+            response.filter(
+              (card) => !(card.type === "Hero" && card.rarity !== "Legendary")
+            )
+          )
+        )
         .then(setButtonClicked(false))
         .catch((err) => console.error(err));
     }
