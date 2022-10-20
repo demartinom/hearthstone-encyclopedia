@@ -22,7 +22,7 @@ export default function Search() {
           )
         )
         .then(setButtonClicked(false))
-        .catch((err) => console.error(err));
+        .catch((err) => setResults('no results'));
     }
   }, [buttonClicked]);
   function updateSearch(e) {
@@ -33,9 +33,11 @@ export default function Search() {
   }
   let searchResults = "";
   function typeofResult() {
-    if (typeof results === "string") {
+    if (results === "loading") {
       searchResults = <h1>Loading</h1>;
-    } else {
+    } else if (results === 'no results') {
+      searchResults = <h1>No cards found</h1>;
+    } else if (typeof results === "object") {
       searchResults = results.map((card) => (
         <Link key={card.cardId} to={`/${card.playerClass}/${card.name}`}>
           <img src={card.img} alt="" />
@@ -49,6 +51,7 @@ export default function Search() {
       changeButton();
     }
   }
+  console.log(results)
   return (
     <div>
       <h1>Find a card</h1>
