@@ -33,6 +33,7 @@ export default function SpecificCard() {
     return (
       <div>
         <img src={cardInfo.img} alt="" />
+        <FontAwesomeIcon icon={outlineStar} />
         <h1>{cardInfo.name}</h1>
         <h2>{cardInfo.cardSet}</h2>
         <h2>{cardInfo.rarity}</h2>
