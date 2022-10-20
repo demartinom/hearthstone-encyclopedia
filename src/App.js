@@ -9,6 +9,7 @@ import SpecificCard from "./components/SpecificCard/SpecificCard";
 import CardBySet from "./components/CardBySet/CardBySet";
 import SpecificSet from "./components/CardBySet/SpecificSet";
 import Favorites from "./components/Favorites/Favorites";
+import Search from "./components/Search/Search";
 
 function App() {
   const [favorites, setFavorites] = React.useState([]);
@@ -67,6 +68,7 @@ function App() {
       <div className="App">
         <GlobalStyle />
         <Routes>
+          <Route path="/search" element={<Search />} />
           <Route path="/" element={<Home />} />
           <Route
             path="/classes"
