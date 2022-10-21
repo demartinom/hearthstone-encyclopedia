@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HomeStyled } from "./Home.styled";
+import { HomeStyled, HomeLinks } from "./Home.styled";
 
 export default function Home() {
   return (
@@ -12,10 +12,12 @@ export default function Home() {
         You can begin by searching for cards by set, by class, or by using the
         advanced search.
       </h2>
-      <Link to="/sets">Find Cards by Set</Link>
-      <Link to="/classes">Find Cards by Class</Link>
-      <Link to={"/search"}>Search for Cards</Link>
-      <Link to={"/favorites"}>See Your Saved Favorites</Link>
+      <HomeLinks>
+        <Link to="/sets">Find Cards by Set</Link>
+        <Link to="/classes">Find Cards by Class</Link>
+        <Link to={"/search"}>Search for Cards</Link>
+        <Link to={"/favorites"}>See Your Saved Favorites</Link>
+      </HomeLinks>
     </HomeStyled>
   );
 }
