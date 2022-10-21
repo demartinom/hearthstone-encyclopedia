@@ -15,4 +15,7 @@ export const GlobalStyle = createGlobalStyle`
 export const CardGallery = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  img{
+    height: 20rem;
+  }
 `;
