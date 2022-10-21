@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 *{
@@ -10,3 +11,5 @@ export const GlobalStyle = createGlobalStyle`
     --font-hearthstone: 'LHF Uncial Caps'
 }
 `;
+
+export const CardGallery = styled.div``;
