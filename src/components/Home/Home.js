@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HomeStyled } from "./Home.styled";
+
 export default function Home() {
   return (
-    <div>
+    <HomeStyled>
       <h1>Hearthstone Encyclopedia</h1>
       <h2>
         Welcome to Hearthstone Encyclopedia! Here you can find a database of all
@@ -14,6 +16,6 @@ export default function Home() {
       <Link to="/classes">Find Cards by Class</Link>
       <Link to={"/search"}>Search for Cards</Link>
       <Link to={"/favorites"}>See Your Saved Favorites</Link>
-    </div>
+    </HomeStyled>
   );
 }
