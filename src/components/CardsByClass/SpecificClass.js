@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { options } from "../../API-Options";
-import { CardContainer, ClassCards } from "./CardsByClass.styled";
+import { CardContainer } from "./CardsByClass.styled";
 import { Link } from "react-router-dom";
 
 export default function SpecificClass() {
@@ -45,7 +45,7 @@ export default function SpecificClass() {
     return (
       <div>
         <h1>{name}</h1>
-        <ClassCards>{cardImages}</ClassCards>
+        <div>{cardImages}</div>
       </div>
     );
   }
