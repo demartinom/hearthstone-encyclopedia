@@ -9,10 +9,18 @@ export default function NavBar() {
         <p>HearthStone Encyclopedia</p>
       </Link>
       <Headings>
-        <p>Sets</p>
-        <p>Classes</p>
-        <p>Search</p>
-        <p>Favorites</p>
+        <Link to={"/sets"}>
+          <p>Sets</p>
+        </Link>
+        <Link to={"/classes"}>
+          <p>Classes</p>
+        </Link>
+        <Link to={"/search"}>
+          <p>Search</p>
+        </Link>
+        <Link to={"/favorites"}>
+          <p>Favorites</p>
+        </Link>
       </Headings>
     </NavBarStyled>
   );
