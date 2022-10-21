@@ -2,6 +2,7 @@ import React from "react";
 import { options } from "../../API-Options";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { CardGallery } from "../../GlobalStyles";
 
 export default function SpecificSet() {
   const { set } = useParams();
@@ -23,6 +24,6 @@ export default function SpecificSet() {
         <img src={card.img} alt="" />
       </Link>
     ));
-    return <div>{setCards}</div>;
+    return <CardGallery>{setCards}</CardGallery>;
   }
 }

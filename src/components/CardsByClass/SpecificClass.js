@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { options } from "../../API-Options";
 import { CardContainer } from "./CardsByClass.styled";
 import { Link } from "react-router-dom";
+import { CardGallery } from "../../GlobalStyles";
 
 export default function SpecificClass() {
   const { name } = useParams();
@@ -45,7 +46,7 @@ export default function SpecificClass() {
     return (
       <div>
         <h1>{name}</h1>
-        <div>{cardImages}</div>
+        <CardGallery>{cardImages}</CardGallery>
       </div>
     );
   }
