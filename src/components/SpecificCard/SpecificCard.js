@@ -19,7 +19,8 @@ export default function SpecificCard(props) {
         setCardData(response.filter((card) => card.cardSet !== "Unknown"))
       )
       .catch((err) => console.error(err));
-  }, []);
+      //eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
   if (cardData === null) {
     return <h1>Loading</h1>;
   } else {
