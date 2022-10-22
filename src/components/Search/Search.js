@@ -55,7 +55,6 @@ export default function Search() {
       changeButton();
     }
   }
-  console.log(results);
   return (
     <div>
       <h1>Find a card</h1>
