@@ -5,6 +5,10 @@ export const HomeStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2rem;
+  img {
+    height: 12rem;
+  }
 `;
 
 export const HomeLinks = styled.div`
