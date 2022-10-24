@@ -19,6 +19,10 @@ export const GlobalStyle = createGlobalStyle`
 body{
   background-image: url(${background});
 }
+a{
+  text-decoration: none;
+  color: inherit;
+}
 `;
 
 export const CardGallery = styled.div`
