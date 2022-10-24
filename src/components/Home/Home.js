@@ -9,7 +9,10 @@ export default function Home() {
       <h1>Hearthstone Encyclopedia</h1>
       <h2>
         Welcome to Hearthstone Encyclopedia! Here you can find a database of all
-        cards found within the game of Hearthstone produced by Blizzard Entertainment. <br />
+        cards found within the game of Hearthstone produced by Blizzard
+        Entertainment.
+      </h2>
+      <h2>
         You can begin by searching for cards by set, by class, or by using the
         advanced search.
       </h2>
