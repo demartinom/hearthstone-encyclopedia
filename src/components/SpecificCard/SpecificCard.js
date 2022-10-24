@@ -1,6 +1,7 @@
 import React from "react";
 import { options } from "../../API-Options";
 import { useParams } from "react-router-dom";
+// import ReactHtmlParser from "react-html-parser";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 // import { faStar as outlineStar } from "@fortawesome/free-regular-svg-icons";
