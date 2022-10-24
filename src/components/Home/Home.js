@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HomeStyled, HomeLinks } from "./Home.styled";
-
+import logo from "../../images/logo.png";
 export default function Home() {
   return (
     <HomeStyled>
+      <img src={logo} alt="hearthstone logo" />
       <h1>Hearthstone Encyclopedia</h1>
       <h2>
         Welcome to Hearthstone Encyclopedia! Here you can find a database of all
