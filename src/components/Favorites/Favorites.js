@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CardGallery } from "../../GlobalStyles";
 
 export default function Favorites(props) {
   if (props.favorites === null) {
@@ -16,7 +17,7 @@ export default function Favorites(props) {
     return (
       <div>
         <button onClick={removeAllFavorites}>Clear all favorites</button>
-        {favoriteCards}
+        <CardGallery>{favoriteCards}</CardGallery>
       </div>
     );
   }

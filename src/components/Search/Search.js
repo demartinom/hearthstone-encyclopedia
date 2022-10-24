@@ -1,6 +1,7 @@
 import React from "react";
 import { options } from "../../API-Options";
 import { Link } from "react-router-dom";
+import { CardGallery } from "../../GlobalStyles";
 
 export default function Search() {
   const [search, setSearch] = React.useState("");
@@ -66,7 +67,7 @@ export default function Search() {
         onKeyUp={handleKeyPress}
       />
       <button onClick={changeButton}>Search</button>
-      {results.length > 0 && searchResults}
+      <CardGallery>{results.length > 0 && searchResults}</CardGallery>
     </div>
   );
 }

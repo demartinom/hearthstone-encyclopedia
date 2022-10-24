@@ -1,9 +1,11 @@
 import React from "react";
 import { options } from "../../API-Options";
 import { useParams } from "react-router-dom";
+// import ReactHtmlParser from "react-html-parser";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 // import { faStar as outlineStar } from "@fortawesome/free-regular-svg-icons";
+import { Card } from "./SpecificCard.styled";
 
 export default function SpecificCard(props) {
   const { name } = useParams();
@@ -44,7 +46,7 @@ export default function SpecificCard(props) {
     // //   );
     // // }
     return (
-      <div>
+      <Card>
         <img src={cardInfo.img} alt="" />
         {/* {props.favorites.filter((e) => e.name === cardInfo.name).length ===
           0 && <FontAwesomeIcon icon={outlineStar} onClick={addToFavorites} />}
@@ -58,7 +60,7 @@ export default function SpecificCard(props) {
         {cardInfo.spellSchool && <p>Spell School: {cardInfo.spellSchool}</p>}
         {cardInfo.type === "Location" && <p>Type: {cardInfo.type}</p>}
         <p>{cardInfo.flavor}</p>
-      </div>
+      </Card>
     );
   }
 }
