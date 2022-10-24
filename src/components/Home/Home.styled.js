@@ -11,7 +11,7 @@ export const HomeStyled = styled.div`
   img {
     height: 12rem;
   }
-  h1{
+  h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
@@ -20,4 +20,10 @@ export const HomeStyled = styled.div`
 export const HomeLinks = styled.div`
   display: flex;
   gap: 1rem;
+`;
+
+export const BodyText = styled.div`
+  h2 {
+    margin-bottom: 1rem;
+  }
 `;
