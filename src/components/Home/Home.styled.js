@@ -23,7 +23,7 @@ export const HomeLinks = styled.div`
 `;
 
 export const BodyText = styled.div`
-  h2 {
-    margin-bottom: 1rem;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `;
