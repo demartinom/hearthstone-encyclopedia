@@ -7,25 +7,29 @@ export default function Search() {
   const [search, setSearch] = React.useState("");
   const [buttonClicked, setButtonClicked] = React.useState(false);
   const [results, setResults] = React.useState([]);
-  React.useEffect(() => {
-    if (buttonClicked === true) {
-      setResults("loading");
-      fetch(
-        `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/search/${search}?collectible=1`,
-        options
-      )
-        .then((response) => response.json())
-        .then((response) =>
-          setResults(
-            response.filter(
-              (card) => !(card.type === "Hero" && card.rarity !== "Legendary")
+  React.useEffect(
+    () => {
+      if (buttonClicked === true) {
+        setResults("loading");
+        fetch(
+          `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/search/${search}?collectible=1`,
+          options
+        )
+          .then((response) => response.json())
+          .then((response) =>
+            setResults(
+              response.filter(
+                (card) => !(card.type === "Hero" && card.rarity !== "Legendary")
+              )
             )
           )
-        )
-        .then(setButtonClicked(false))
-        .catch((err) => setResults("no results"));
-    }
-  }, [buttonClicked]);
+          .then(setButtonClicked(false))
+          .catch((err) => setResults("no results"));
+      }
+    },
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+    [buttonClicked]
+  );
   function updateSearch(e) {
     setSearch(e.target.value);
   }
@@ -52,7 +56,6 @@ export default function Search() {
       changeButton();
     }
   }
-  console.log(results);
   return (
     <div>
       <h1>Find a card</h1>

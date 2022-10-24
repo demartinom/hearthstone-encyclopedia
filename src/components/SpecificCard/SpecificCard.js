@@ -20,6 +20,7 @@ export default function SpecificCard(props) {
         setCardData(response.filter((card) => card.cardSet !== "Unknown"))
       )
       .catch((err) => console.error(err));
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if (cardData === null) {
     return <h1>Loading</h1>;
@@ -35,14 +36,15 @@ export default function SpecificCard(props) {
     //   .replace("@", "")
     //   .replace("the_", "the")
     //   .replace("ALL_", "ALL");
+    //
     // function addToFavorites() {
-    //   props.setFavorite((prevFavorites) => [...prevFavorites, cardInfo]);
-    // }
-    // function removeFromFavorites() {
-    //   props.setFavorite((prevFavorites) =>
-    //     prevFavorites.filter((card) => card.cardId !== cardInfo.cardId)
-    //   );
-    // }
+    // //   props.setFavorite((prevFavorites) => [...prevFavorites, cardInfo]);
+    // // }
+    // // function removeFromFavorites() {
+    // //   props.setFavorite((prevFavorites) =>
+    // //     prevFavorites.filter((card) => card.cardId !== cardInfo.cardId)
+    // //   );
+    // // }
     return (
       <Card>
         <img src={cardInfo.img} alt="" />

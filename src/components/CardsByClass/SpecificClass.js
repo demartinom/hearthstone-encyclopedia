@@ -8,27 +8,31 @@ import { CardGallery } from "../../GlobalStyles";
 export default function SpecificClass() {
   const { name } = useParams();
   const [classCards, setClassCards] = React.useState(null);
-  React.useEffect(() => {
-    fetch(
-      `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/${name}?collectible=1`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) =>
-        setClassCards(
-          response.filter(
-            (card) =>
-              (card.type === "Minion" ||
-                card.type === "Spell" ||
-                card.type === "Location" ||
-                card.type === "Weapon" ||
-                (card.type === "Hero" && card.rarity === "Legendary")) &&
-              card.cardSet !== "Unknown"
+  React.useEffect(
+    () => {
+      fetch(
+        `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/${name}?collectible=1`,
+        options
+      )
+        .then((response) => response.json())
+        .then((response) =>
+          setClassCards(
+            response.filter(
+              (card) =>
+                (card.type === "Minion" ||
+                  card.type === "Spell" ||
+                  card.type === "Location" ||
+                  card.type === "Weapon" ||
+                  (card.type === "Hero" && card.rarity === "Legendary")) &&
+                card.cardSet !== "Unknown"
+            )
           )
         )
-      )
-      .catch((err) => console.error(err));
-  }, []);
+        .catch((err) => console.error(err));
+    },
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
   if (classCards === null) {
     return <h1>loading</h1>;
   } else {

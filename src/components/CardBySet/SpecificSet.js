@@ -7,15 +7,19 @@ import { CardGallery } from "../../GlobalStyles";
 export default function SpecificSet() {
   const { set } = useParams();
   const [setData, setSetData] = React.useState(null);
-  React.useEffect(() => {
-    fetch(
-      `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/${set}?collectible=1`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setSetData(response))
-      .catch((err) => console.error(err));
-  }, []);
+  React.useEffect(
+    () => {
+      fetch(
+        `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/${set}?collectible=1`,
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => setSetData(response))
+        .catch((err) => console.error(err));
+    },
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
   if (setData === null) {
     return <h1>Loading</h1>;
   } else {
