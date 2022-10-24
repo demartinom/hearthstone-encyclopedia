@@ -13,17 +13,23 @@ export const HomeStyled = styled.div`
   }
   h1 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
   }
-`;
-
-export const HomeLinks = styled.div`
-  display: flex;
-  gap: 1rem;
 `;
 
 export const BodyText = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-bottom: 2rem;
+`;
+
+export const HomeLinks = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  a {
+    font-size: 1.5rem;
+    text-decoration: underline;
+  }
 `;
