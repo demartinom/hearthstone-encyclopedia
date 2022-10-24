@@ -8,6 +8,7 @@ export const HomeStyled = styled.div`
   margin-top: 2rem;
   padding: 0 3rem;
   text-align: center;
+  color: var(--color-brown);
   img {
     height: 12rem;
   }
