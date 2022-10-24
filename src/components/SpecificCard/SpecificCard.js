@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 // import { faStar as outlineStar } from "@fortawesome/free-regular-svg-icons";
-import { Card } from "./SpecificCard.styled";
+import { Card, CardInfo } from "./SpecificCard.styled";
 
 export default function SpecificCard(props) {
   const { name } = useParams();
@@ -53,13 +53,15 @@ export default function SpecificCard(props) {
         {props.favorites.filter((e) => e.name === cardInfo.name).length > 0 && (
           <FontAwesomeIcon icon={solidStar} onClick={removeFromFavorites} />
         )} */}
-        <h1>{cardInfo.name}</h1>
-        <h2>{cardInfo.cardSet}</h2>
-        <h2>{cardInfo.rarity}</h2>
-        {cardInfo.race && <p>Race: {cardInfo.race}</p>}
-        {cardInfo.spellSchool && <p>Spell School: {cardInfo.spellSchool}</p>}
-        {cardInfo.type === "Location" && <p>Type: {cardInfo.type}</p>}
-        <p>{cardInfo.flavor}</p>
+        <CardInfo>
+          <h1>{cardInfo.name}</h1>
+          <h2>{cardInfo.cardSet}</h2>
+          <h2>{cardInfo.rarity}</h2>
+          {cardInfo.race && <p>Race: {cardInfo.race}</p>}
+          {cardInfo.spellSchool && <p>Spell School: {cardInfo.spellSchool}</p>}
+          {cardInfo.type === "Location" && <p>Type: {cardInfo.type}</p>}
+          <p>{cardInfo.flavor}</p>
+        </CardInfo>
       </Card>
     );
   }
