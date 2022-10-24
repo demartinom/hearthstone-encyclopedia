@@ -6,8 +6,14 @@ export const HomeStyled = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+  padding: 0 3rem;
+  text-align: center;
   img {
     height: 12rem;
+  }
+  h1{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 `;
 
