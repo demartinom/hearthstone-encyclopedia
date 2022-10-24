@@ -5,7 +5,7 @@ export const HomeStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
   padding: 0 3rem;
   text-align: center;
   color: var(--color-brown);
