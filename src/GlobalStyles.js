@@ -3,6 +3,7 @@ import styled from "styled-components";
 import background from "./images/background.png";
 
 export const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap');
 *{
     box-sizing: border-box;
     margin: 0;
@@ -10,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 :root{
     --font-hearthstone: 'LHF Uncial Caps';
+    --font-serif: 'Merriweather', serif;
     --color-gold: #CAA949ff;
     --color-light-gold: #ECD0A0ff;
     --color-regular-blue: #7490BFff;
