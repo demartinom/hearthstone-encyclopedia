@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { options } from "../../API-Options";
-import { CardContainer } from "./CardsByClass.styled";
+import { SpecificClassStyled } from "./CardsByClass.styled";
 import { CardGallery } from "../../GlobalStyles";
-
+import { Link } from "react-router-dom";
 export default function SpecificClass() {
   const { name } = useParams();
   const [classCards, setClassCards] = React.useState(null);
@@ -40,18 +40,18 @@ export default function SpecificClass() {
     ];
     noDuplicates.sort((a, b) => (a.name > b.name ? 1 : -1));
     let cardImages = noDuplicates.map((classCard) => (
-      <CardContainer
+      <Link
         to={`/${classCard.playerClass}/${classCard.name}`}
         key={classCard.cardId}
       >
         <img src={classCard.img} alt="" />
-      </CardContainer>
+      </Link>
     ));
     return (
-      <div>
+      <SpecificClassStyled>
         <h1>{name}</h1>
         <CardGallery>{cardImages}</CardGallery>
-      </div>
+      </SpecificClassStyled>
     );
   }
 }

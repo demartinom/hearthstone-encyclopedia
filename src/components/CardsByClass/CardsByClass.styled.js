@@ -30,4 +30,5 @@ export const ClassList = styled.div`
   padding: 0.5rem 2rem;
 `;
 
-export const CardContainer = styled(Link)``;
+
+export const SpecificClassStyled = styled.div``;
