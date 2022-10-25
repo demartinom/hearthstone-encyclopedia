@@ -17,6 +17,9 @@ export default function CardsByClass(props) {
     <CardsByClassStyled>
       <h1>Discover cards by class</h1>
       <ClassList>{classesList}</ClassList>
+      <ClassInfo to={`/classes/Neutral/allcards`}>
+        <h2>Neutral</h2>
+      </ClassInfo>
     </CardsByClassStyled>
   );
 }
