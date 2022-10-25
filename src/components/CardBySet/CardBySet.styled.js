@@ -7,7 +7,7 @@ export const CardBySetStyled = styled.div`
   align-items: center;
   font-family: var(--font-hearthstone);
   gap: 1rem;
-  h1{
+  h1 {
     margin-top: 1rem;
     font-size: 2.5rem;
   }
@@ -29,3 +29,5 @@ export const SetName = styled(Link)`
     height: 4rem;
   }
 `;
+
+export const SpecificSetStyled = styled.div``;
