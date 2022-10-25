@@ -5,9 +5,9 @@ export const setArray = [
   },
   {
     name: "Goblins vs Gnomes",
-    logo: "/set-logos/",
+    logo: "/set-logos/gvg.svg",
   },
-  { name: "Blackrock Mountain", logo: "/set-logos/" },
+  { name: "Blackrock Mountain", logo: "/set-logos/blackrock.svg" },
   { name: "The Grand Tournament", logo: "/set-logos/tournament.svg" },
   { name: "The League of Explorers", logo: "/set-logos/explorers.svg" },
   { name: "Whispers of the Old Gods", logo: "/set-logos/whispers.svg" },
