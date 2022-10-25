@@ -30,4 +30,12 @@ export const SetName = styled(Link)`
   }
 `;
 
-export const SpecificSetStyled = styled.div``;
+export const SpecificSetStyled = styled.div`
+  font-family: var(--font-hearthstone);
+  text-align: center;
+  h1 {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    color: var(--color-brown)
+  }
+`;
