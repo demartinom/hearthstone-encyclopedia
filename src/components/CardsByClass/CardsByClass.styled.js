@@ -1,7 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const CardContainer = styled.div`
-  img {
-    height: 15rem;
-  }
-`;
+export const CardContainer = styled(Link)``;

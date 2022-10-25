@@ -41,11 +41,12 @@ export default function SpecificClass() {
     ];
     noDuplicates.sort((a, b) => (a.name > b.name ? 1 : -1));
     let cardImages = noDuplicates.map((classCard) => (
-      <CardContainer key={classCard.cardId}>
-        <Link to={`/${classCard.playerClass}/${classCard.name}`}>
-          <img src={classCard.img} alt="" />
-        </Link>
-      </CardContainer>
+      <Link
+        to={`/${classCard.playerClass}/${classCard.name}`}
+        key={classCard.cardId}
+      >
+        <img src={classCard.img} alt="" />
+      </Link>
     ));
     return (
       <div>
