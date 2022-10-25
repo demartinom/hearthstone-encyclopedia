@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     --color-light-gold: #ECD0A0ff;
     --color-regular-blue: #7490BFff;
     --color-light-blue: #7BE2FDff;
-    --color-brown: #6B4A28ff;        
+    --color-brown: #4a3321;        
 }
 body{
   background-image: url(${background});
