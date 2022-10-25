@@ -18,7 +18,7 @@ export default function CardsByClass(props) {
       <h1>Discover cards by class</h1>
       <ClassList>{classesList}</ClassList>
       <ClassInfo to={`/classes/Neutral/allcards`}>
-        <h2>Neutral</h2>
+        <h2>Neutral Cards</h2>
       </ClassInfo>
     </CardsByClassStyled>
   );
