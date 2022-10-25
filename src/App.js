@@ -36,35 +36,6 @@ function App() {
       </>
     );
   } else {
-    const cardSets = metadata.sets
-      .filter(
-        (setName) =>
-          setName !== "Unknown" &&
-          setName !== "Missions" &&
-          setName !== "Slush" &&
-          setName !== "Demo" &&
-          setName !== "System" &&
-          setName !== "Credits" &&
-          setName !== "Tavern Brawl" &&
-          setName !== "Hero Skins" &&
-          setName !== "Taverns of Time" &&
-          setName !== "Wild Event" &&
-          setName !== "Battlegrounds" &&
-          setName !== "Mercenaries" &&
-          setName !== "Wailing Caverns" &&
-          setName !== "Promo"
-      )
-      .reverse();
-    const classesArray = metadata.classes
-      .sort()
-      .filter(
-        (gameClass) =>
-          gameClass !== "Death Knight" &&
-          gameClass !== "Whizbang" &&
-          gameClass !== "Dream" &&
-          gameClass !== "Neutral"
-      );
-    classesArray.push(metadata.classes[6]);
     return (
       <div className="App">
         <GlobalStyle />
@@ -72,10 +43,7 @@ function App() {
         <Routes>
           <Route path="/search" element={<Search />} />
           <Route path="/" element={<Home />} />
-          <Route
-            path="/classes"
-            element={<CardsByClass classes={classesArray} />}
-          />
+          <Route path="/classes" element={<CardsByClass />} />
           <Route
             path="/favorites"
             element={
@@ -89,7 +57,7 @@ function App() {
               <SpecificCard setFavorite={setFavorites} favorites={favorites} />
             }
           />
-          <Route path="/sets" element={<CardBySet sets={cardSets} />} />
+          <Route path="/sets" element={<CardBySet />} />
           <Route path="/sets/:set" element={<SpecificSet />} />
         </Routes>
       </div>

@@ -3,6 +3,7 @@ import { options } from "../../API-Options";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { CardGallery } from "../../GlobalStyles";
+import { SpecificSetStyled } from "./CardBySet.styled";
 
 export default function SpecificSet() {
   const { set } = useParams();
@@ -28,6 +29,11 @@ export default function SpecificSet() {
         <img src={card.img} alt="" />
       </Link>
     ));
-    return <CardGallery>{setCards}</CardGallery>;
+    return (
+      <SpecificSetStyled>
+        <h1>{set}</h1>
+        <CardGallery>{setCards}</CardGallery>
+      </SpecificSetStyled>
+    );
   }
 }
