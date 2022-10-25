@@ -5,6 +5,12 @@ export const CardBySetStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: var(--font-hearthstone);
+  gap: 1rem;
+  h1{
+    margin-top: 1rem;
+    font-size: 2.5rem;
+  }
 `;
 
 export const SetGallery = styled.div`
@@ -16,7 +22,6 @@ export const SetGallery = styled.div`
 
 export const SetName = styled(Link)`
   font-size: 2rem;
-  font-family: var(--font-hearthstone);
   display: flex;
   justify-content: flex-start;
   align-items: center;
