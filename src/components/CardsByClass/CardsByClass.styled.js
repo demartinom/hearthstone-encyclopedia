@@ -12,6 +12,8 @@ export const CardsByClassStyled = styled.div`
   }
 `;
 
+export const ClassInfo = styled(Link)``;
+
 export const ClassList = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
