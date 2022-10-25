@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ClassList, CardsByClassStyled } from "./CardsByClass.styled";
+import { classArray } from "../../classObject";
 
 export default function CardsByClass(props) {
-  const classesList = props.classes.map((gameClass) => (
-    <Link to={`/classes/${gameClass}/allcards`} key={gameClass}>
-      <h2>{gameClass}</h2>
+  const classesList = classArray.map((gameClass) => (
+    <Link to={`/classes/${gameClass.name}/allcards`} key={gameClass}>
+      <h2>{gameClass.name}</h2>
+      <img src={gameClass.logo} alt="" />
     </Link>
   ));
   return (
