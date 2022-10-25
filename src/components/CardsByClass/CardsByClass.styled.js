@@ -30,5 +30,12 @@ export const ClassList = styled.div`
   padding: 0.5rem 2rem;
 `;
 
-
-export const SpecificClassStyled = styled.div``;
+export const SpecificClassStyled = styled.div`
+  font-family: var(--font-hearthstone);
+  text-align: center;
+  h1 {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    color: var(--color-brown);
+  }
+`;
