@@ -36,16 +36,6 @@ function App() {
       </>
     );
   } else {
-    const classesArray = metadata.classes
-      .sort()
-      .filter(
-        (gameClass) =>
-          gameClass !== "Death Knight" &&
-          gameClass !== "Whizbang" &&
-          gameClass !== "Dream" &&
-          gameClass !== "Neutral"
-      );
-    classesArray.push(metadata.classes[6]);
     return (
       <div className="App">
         <GlobalStyle />
@@ -53,10 +43,7 @@ function App() {
         <Routes>
           <Route path="/search" element={<Search />} />
           <Route path="/" element={<Home />} />
-          <Route
-            path="/classes"
-            element={<CardsByClass classes={classesArray} />}
-          />
+          <Route path="/classes" element={<CardsByClass />} />
           <Route
             path="/favorites"
             element={
