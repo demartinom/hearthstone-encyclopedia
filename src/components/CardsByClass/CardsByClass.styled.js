@@ -6,13 +6,22 @@ export const CardsByClassStyled = styled.div`
   flex-direction: column;
   align-items: center;
   font-family: var(--font-hearthstone);
+  gap: 1rem;
   h1 {
     margin-top: 1rem;
     font-size: 2.5rem;
   }
 `;
 
-export const ClassInfo = styled(Link)``;
+export const ClassInfo = styled(Link)`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+img{
+  width: 20rem;
+}
+`;
 
 export const ClassList = styled.div`
   display: grid;
