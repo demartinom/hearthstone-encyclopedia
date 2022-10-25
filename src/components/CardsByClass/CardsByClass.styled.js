@@ -14,13 +14,13 @@ export const CardsByClassStyled = styled.div`
 `;
 
 export const ClassInfo = styled(Link)`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-img{
-  width: 20rem;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 20rem;
+  }
 `;
 
 export const ClassList = styled.div`
