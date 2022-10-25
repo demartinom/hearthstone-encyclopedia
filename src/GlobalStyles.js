@@ -30,6 +30,7 @@ a{
 export const CardGallery = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  padding: 1rem 0;
   img {
     height: 20rem;
   }
