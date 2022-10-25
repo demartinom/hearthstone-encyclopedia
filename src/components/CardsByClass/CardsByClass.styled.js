@@ -3,4 +3,6 @@ import styled from "styled-components";
 
 export const ClassList = styled.div``;
 
+export const CardsByClassStyled = styled.div``;
+
 export const CardContainer = styled(Link)``;

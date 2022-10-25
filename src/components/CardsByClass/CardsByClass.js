@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ClassList } from "./CardsByClass.styled";
+import { ClassList, CardsByClassStyled } from "./CardsByClass.styled";
 
 export default function CardsByClass(props) {
   const classesList = props.classes.map((gameClass) => (
@@ -9,9 +9,9 @@ export default function CardsByClass(props) {
     </Link>
   ));
   return (
-    <ClassList>
+    <CardsByClassStyled>
       <h1>Discover cards by class</h1>
-      {classesList}
-    </ClassList>
+      <ClassList>{classesList}</ClassList>
+    </CardsByClassStyled>
   );
 }
