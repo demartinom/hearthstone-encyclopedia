@@ -31,7 +31,7 @@ export default function SpecificSet() {
     ));
     return (
       <SpecificSetStyled>
-        {set}
+        <h1>{set}</h1>
         <CardGallery>{setCards}</CardGallery>
       </SpecificSetStyled>
     );
