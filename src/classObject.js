@@ -8,5 +8,4 @@ export const classArray = [
   { name: "Rogue", logo: "/class-logos/rogue.png" },
   { name: "Shaman", logo: "/class-logos/shaman.png" },
   { name: "Warlock", logo: "/class-logos/warlock.png" },
-  { name: "Neutral", logo: "" },
 ];
