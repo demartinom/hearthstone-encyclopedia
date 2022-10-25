@@ -4,7 +4,7 @@ export const classArray = [
   { name: "Hunter", logo: "/class-logos/hunter.png" },
   { name: "Mage", logo: "/class-logos/mage.png" },
   { name: "Paladin", logo: "/class-logos/paladin.png" },
-  { name: "Priest", logo: "/class-logos/priest" },
+  { name: "Priest", logo: "/class-logos/priest.png" },
   { name: "Rogue", logo: "/class-logos/rogue.png" },
   { name: "Shaman", logo: "/class-logos/shaman.png" },
   { name: "Warlock", logo: "/class-logos/warlock.png" },
