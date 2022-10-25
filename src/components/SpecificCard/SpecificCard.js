@@ -2,9 +2,9 @@ import React from "react";
 import { options } from "../../API-Options";
 import { useParams } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
-// import { faStar as outlineStar } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as outlineStar } from "@fortawesome/free-regular-svg-icons";
 import { Card, CardInfo } from "./SpecificCard.styled";
 
 export default function SpecificCard(props) {
@@ -26,33 +26,33 @@ export default function SpecificCard(props) {
     return <h1>Loading</h1>;
   } else {
     const cardInfo = cardData[0];
-    // const noSymbols = cardInfo.text
-    //   .replace("[x]", "")
-    //   .replace("$", "")
-    //   .replace("__", "")
-    //   .replace("._", ".")
-    //   .replace("-$", "-")
-    //   .replace("(@)", "(<b>Invoke</b> twice to upgrade.)")
-    //   .replace("@", "")
-    //   .replace("the_", "the")
-    //   .replace("ALL_", "ALL");
-    //
-    // function addToFavorites() {
-    // //   props.setFavorite((prevFavorites) => [...prevFavorites, cardInfo]);
-    // // }
-    // // function removeFromFavorites() {
-    // //   props.setFavorite((prevFavorites) =>
-    // //     prevFavorites.filter((card) => card.cardId !== cardInfo.cardId)
-    // //   );
-    // // }
+    const noSymbols = cardInfo.text
+      .replace("[x]", "")
+      .replace("$", "")
+      .replace("__", "")
+      .replace("._", ".")
+      .replace("-$", "-")
+      .replace("(@)", "(<b>Invoke</b> twice to upgrade.)")
+      .replace("@", "")
+      .replace("the_", "the")
+      .replace("ALL_", "ALL");
+
+    function addToFavorites() {
+      props.setFavorite((prevFavorites) => [...prevFavorites, cardInfo]);
+    }
+    function removeFromFavorites() {
+      props.setFavorite((prevFavorites) =>
+        prevFavorites.filter((card) => card.cardId !== cardInfo.cardId)
+      );
+    }
     return (
       <Card>
         <img src={cardInfo.img} alt="" />
-        {/* {props.favorites.filter((e) => e.name === cardInfo.name).length ===
+        {props.favorites.filter((e) => e.name === cardInfo.name).length ===
           0 && <FontAwesomeIcon icon={outlineStar} onClick={addToFavorites} />}
         {props.favorites.filter((e) => e.name === cardInfo.name).length > 0 && (
           <FontAwesomeIcon icon={solidStar} onClick={removeFromFavorites} />
-        )} */}
+        )}
         <CardInfo>
           <h1>{cardInfo.name}</h1>
           <h2>Set: {cardInfo.cardSet}</h2>
