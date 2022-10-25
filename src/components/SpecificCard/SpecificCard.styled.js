@@ -12,6 +12,7 @@ export const CardInfo = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 25rem;
+  gap: 0.5rem;
 
   h1 {
     font-family: var(--font-hearthstone);
@@ -28,4 +29,10 @@ export const CardInfo = styled.div`
   p {
     font-size: 1.25rem;
   }
+`;
+
+export const CardName = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 `;
