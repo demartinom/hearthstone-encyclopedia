@@ -5,8 +5,8 @@ import { setArray } from "../../SetObject";
 export default function CardBySet() {
   const setList = setArray.reverse().map((set) => (
     <SetName key={set.name} to={`/sets/${set.name}`}>
-      {set.name}
       <img src={set.logo} alt="" />
+      {set.name}
     </SetName>
   ));
   return <SetGallery>{setList}</SetGallery>;
