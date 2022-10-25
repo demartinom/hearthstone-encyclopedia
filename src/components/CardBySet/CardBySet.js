@@ -1,5 +1,5 @@
 import React from "react";
-import { SetGallery, SetName } from "./CardBySet.styled";
+import { CardBySetStyled, SetGallery, SetName } from "./CardBySet.styled";
 import { setArray } from "../../SetObject";
 
 export default function CardBySet() {
@@ -9,5 +9,10 @@ export default function CardBySet() {
       {set.name}
     </SetName>
   ));
-  return <SetGallery>{setList}</SetGallery>;
+  return (
+    <CardBySetStyled>
+      <h1>Hearthstone Sets</h1>
+      <SetGallery>{setList}</SetGallery>
+    </CardBySetStyled>
+  );
 }

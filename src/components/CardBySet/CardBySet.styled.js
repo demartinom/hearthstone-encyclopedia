@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+export const CardBySetStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const SetGallery = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
