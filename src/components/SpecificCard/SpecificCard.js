@@ -41,15 +41,13 @@ export default function SpecificCard(props) {
           <CardName>
             <h1>{cardInfo.name}</h1>
             {props.favorites.filter((e) => e.name === cardInfo.name).length ===
-              0 && (
+              0 ? (
               <FontAwesomeIcon
                 icon={outlineStar}
                 size="2x"
                 onClick={addToFavorites}
               />
-            )}
-            {props.favorites.filter((e) => e.name === cardInfo.name).length >
-              0 && (
+            ) : (
               <FontAwesomeIcon
                 icon={solidStar}
                 size="2x"
