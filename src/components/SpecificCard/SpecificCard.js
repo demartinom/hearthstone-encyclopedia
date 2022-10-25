@@ -26,17 +26,6 @@ export default function SpecificCard(props) {
     return <h1>Loading</h1>;
   } else {
     const cardInfo = cardData[0];
-    const noSymbols = cardInfo.text
-      .replace("[x]", "")
-      .replace("$", "")
-      .replace("__", "")
-      .replace("._", ".")
-      .replace("-$", "-")
-      .replace("(@)", "(<b>Invoke</b> twice to upgrade.)")
-      .replace("@", "")
-      .replace("the_", "the")
-      .replace("ALL_", "ALL");
-
     function addToFavorites() {
       props.setFavorite((prevFavorites) => [...prevFavorites, cardInfo]);
     }
