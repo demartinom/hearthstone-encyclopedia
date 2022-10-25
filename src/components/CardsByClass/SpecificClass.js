@@ -2,7 +2,6 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { options } from "../../API-Options";
 import { CardContainer } from "./CardsByClass.styled";
-import { Link } from "react-router-dom";
 import { CardGallery } from "../../GlobalStyles";
 
 export default function SpecificClass() {
@@ -41,12 +40,12 @@ export default function SpecificClass() {
     ];
     noDuplicates.sort((a, b) => (a.name > b.name ? 1 : -1));
     let cardImages = noDuplicates.map((classCard) => (
-      <Link
+      <CardContainer
         to={`/${classCard.playerClass}/${classCard.name}`}
         key={classCard.cardId}
       >
         <img src={classCard.img} alt="" />
-      </Link>
+      </CardContainer>
     ));
     return (
       <div>
