@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CardGallery } from "../../GlobalStyles";
+import { FavoritesStyled } from "./Favorites.styled";
 
 export default function Favorites(props) {
   if (props.favorites.length === 0) {
@@ -15,10 +16,10 @@ export default function Favorites(props) {
       </Link>
     ));
     return (
-      <div>
+      <FavoritesStyled>
         <button onClick={removeAllFavorites}>Clear all favorites</button>
         <CardGallery>{favoriteCards}</CardGallery>
-      </div>
+      </FavoritesStyled>
     );
   }
 }
