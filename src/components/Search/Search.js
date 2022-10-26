@@ -3,6 +3,8 @@ import { options } from "../../API-Options";
 import { Link } from "react-router-dom";
 import { CardGallery } from "../../GlobalStyles";
 import { StyledSearch } from "./Search.styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export default function Search() {
   const [search, setSearch] = React.useState("");
@@ -72,7 +74,7 @@ export default function Search() {
           onChange={updateSearch}
           onKeyUp={handleKeyPress}
         />
-        <button onClick={changeButton}>Search</button>
+        <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
       </StyledSearch>
       <CardGallery>{results.length > 0 && searchResults}</CardGallery>
     </>
