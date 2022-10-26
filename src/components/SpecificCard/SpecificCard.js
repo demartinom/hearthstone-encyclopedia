@@ -63,6 +63,8 @@ export default function SpecificCard(props) {
           )}
           {cardInfo.type === "Location" && <h3>Type: {cardInfo.type}</h3>}
           {cardInfo.type === "Weapon" && <h3>Type: {cardInfo.type}</h3>}
+          {cardInfo.type === "Hero" && <h3>Type: {cardInfo.type}</h3>}
+
           <p>
             <em>{cardInfo.flavor}</em>
           </p>
