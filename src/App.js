@@ -19,9 +19,13 @@ function App() {
     const savedFavorites = JSON.parse(localStorage.getItem("favorites"));
     setFavorites(savedFavorites);
   }, []);
-  React.useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, []);
+  React.useEffect(
+    () => {
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    },
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
   React.useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
