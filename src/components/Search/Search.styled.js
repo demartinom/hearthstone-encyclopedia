@@ -14,8 +14,10 @@ export const StyledSearch = styled.div`
     border: none;
     width: 23rem;
     height: 2.25rem;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     font-weight: 100;
+    padding: 0 0.5rem;
+    background-color: white;
   }
 `;
 
@@ -37,4 +39,8 @@ export const Icon = styled.div`
   :hover {
     cursor: pointer;
   }
+`;
+
+export const Searching = styled.div`
+  margin-top: 5rem;
 `;
