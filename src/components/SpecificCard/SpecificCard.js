@@ -66,7 +66,7 @@ export default function SpecificCard(props) {
           {cardInfo.type === "Hero" && <h3>Type: {cardInfo.type}</h3>}
 
           <p>
-            <em>{cardInfo.flavor}</em>
+            <em>{cardInfo.flavor.replace("<i>", "").replace("</i>", "")}</em>
           </p>
           <p>Artist: {cardInfo.artist}</p>
         </CardInfo>
