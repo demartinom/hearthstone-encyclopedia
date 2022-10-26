@@ -79,6 +79,7 @@ export default function Search() {
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
               size="1x"
+              color="#CAA949ff"
               onClick={changeButton}
             ></FontAwesomeIcon>
           </Icon>
