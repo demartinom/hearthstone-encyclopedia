@@ -5,7 +5,11 @@ import { FavoritesStyled } from "./Favorites.styled";
 
 export default function Favorites(props) {
   if (props.favorites.length === 0) {
-    return <h1>No favorites yet!</h1>;
+    return (
+      <FavoritesStyled>
+        <h2>No favorites yet!</h2>
+      </FavoritesStyled>
+    );
   } else {
     function removeAllFavorites() {
       props.setFavorites([]);
@@ -16,10 +20,13 @@ export default function Favorites(props) {
       </Link>
     ));
     return (
-      <FavoritesStyled>
-        <button onClick={removeAllFavorites}>Clear all favorites</button>
+      <>
+        <FavoritesStyled>
+          <button onClick={removeAllFavorites}>Clear all favorites</button>
+          <h1>Your Favorites</h1>
+        </FavoritesStyled>
         <CardGallery>{favoriteCards}</CardGallery>
-      </FavoritesStyled>
+      </>
     );
   }
 }
