@@ -4,6 +4,8 @@ import { options } from "../../API-Options";
 import { SpecificClassStyled } from "./CardsByClass.styled";
 import { CardGallery } from "../../GlobalStyles";
 import { Link } from "react-router-dom";
+import Loading from "../Loading/Loading";
+
 export default function SpecificClass() {
   const { name } = useParams();
   const [classCards, setClassCards] = React.useState(null);
@@ -33,7 +35,7 @@ export default function SpecificClass() {
     []
   );
   if (classCards === null) {
-    return <h1>loading</h1>;
+    return <Loading />;
   } else {
     const noDuplicates = [
       ...new Map(classCards.map((card) => [card.name, card])).values(),

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { CardGallery } from "../../GlobalStyles";
 import { SpecificSetStyled } from "./CardBySet.styled";
-
+import Loading from "../Loading/Loading";
 export default function SpecificSet() {
   const { set } = useParams();
   const [setData, setSetData] = React.useState(null);
@@ -22,7 +22,7 @@ export default function SpecificSet() {
     []
   );
   if (setData === null) {
-    return <h1>Loading</h1>;
+    return <Loading />;
   } else {
     const setCards = setData.map((card) => (
       <Link key={card.cardId} to={`/${card.playerClass}/${card.name}`}>
