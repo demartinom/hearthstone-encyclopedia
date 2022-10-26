@@ -6,6 +6,7 @@ export default function Loading() {
   return (
     <LoadingStyled>
       <img src={logo} alt="" />
+      <h1>Loading</h1>
     </LoadingStyled>
   );
 }
