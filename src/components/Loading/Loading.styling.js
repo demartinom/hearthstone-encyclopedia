@@ -7,7 +7,7 @@ export const LoadingStyled = styled.div`
   justify-content: center;
   margin-top: 2rem;
   img {
-    height: 50vh;
+    height: 40vh;
   }
   h1{
     font-size: 5rem;
