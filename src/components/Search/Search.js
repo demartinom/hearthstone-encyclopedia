@@ -74,7 +74,10 @@ export default function Search() {
           onChange={updateSearch}
           onKeyUp={handleKeyPress}
         />
-        <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
+        <FontAwesomeIcon
+          icon={faMagnifyingGlass}
+          onClick={changeButton}
+        ></FontAwesomeIcon>
       </StyledSearch>
       <CardGallery>{results.length > 0 && searchResults}</CardGallery>
     </>
