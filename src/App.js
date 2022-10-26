@@ -14,7 +14,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Loading from "./components/Loading/Loading";
 
 function App() {
-  const [favorites, setFavorites] = React.useState([]);
+  const [favorites, setFavorites] = React.useState(null);
   React.useEffect(() => {
     const savedFavorites = localStorage.getItem("favorites");
     if (savedFavorites === null) {
