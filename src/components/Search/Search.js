@@ -2,7 +2,7 @@ import React from "react";
 import { options } from "../../API-Options";
 import { Link } from "react-router-dom";
 import { CardGallery } from "../../GlobalStyles";
-import { StyledSearch } from "./Search.styled";
+import { StyledSearch, Icon, SearchFeature } from "./Search.styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
@@ -67,17 +67,22 @@ export default function Search() {
     <>
       <StyledSearch>
         <h1>Find a card</h1>
-        <input
-          type="search"
-          name="Search"
-          id="Search"
-          onChange={updateSearch}
-          onKeyUp={handleKeyPress}
-        />
-        <FontAwesomeIcon
-          icon={faMagnifyingGlass}
-          onClick={changeButton}
-        ></FontAwesomeIcon>
+        <SearchFeature>
+          <input
+            type="search"
+            name="Search"
+            id="Search"
+            onChange={updateSearch}
+            onKeyUp={handleKeyPress}
+          />
+          <Icon>
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              size="1x"
+              onClick={changeButton}
+            ></FontAwesomeIcon>
+          </Icon>
+        </SearchFeature>
       </StyledSearch>
       <CardGallery>{results.length > 0 && searchResults}</CardGallery>
     </>

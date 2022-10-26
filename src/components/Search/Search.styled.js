@@ -17,7 +17,12 @@ export const StyledSearch = styled.div`
     font-size: 1.75rem;
     font-weight: 100;
   }
-  button {
-  
+`;
+
+export const SearchFeature = styled.div``;
+
+export const Icon = styled.div`
+  :hover {
+    cursor: pointer;
   }
 `;
