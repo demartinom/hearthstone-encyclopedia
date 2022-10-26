@@ -1,7 +1,6 @@
 import React from "react";
 import { options } from "../../API-Options";
 import { useParams } from "react-router-dom";
-import ReactHtmlParser from "react-html-parser";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as outlineStar } from "@fortawesome/free-regular-svg-icons";
@@ -64,7 +63,7 @@ export default function SpecificCard(props) {
           {cardInfo.type === "Location" && <h3>Type: {cardInfo.type}</h3>}
           {cardInfo.type === "Weapon" && <h3>Type: {cardInfo.type}</h3>}
           <p>
-            <em>{ReactHtmlParser(cardInfo.flavor)}</em>
+            <em>{cardInfo.flavor}</em>
           </p>
           <p>Artist: {cardInfo.artist}</p>
         </CardInfo>
