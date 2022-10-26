@@ -39,8 +39,7 @@ export default function SpecificCard(props) {
         <img src={cardInfo.img} alt="" />
         <CardInfo>
           <CardName>
-            {props.favorites.filter((e) => e.name === cardInfo.name).length ===
-            0 ? (
+            {!props.favorites.find((e) => e.name === cardInfo.name) ? (
               <FontAwesomeIcon
                 icon={outlineStar}
                 size="2x"
