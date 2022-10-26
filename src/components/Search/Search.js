@@ -2,7 +2,7 @@ import React from "react";
 import { options } from "../../API-Options";
 import { Link } from "react-router-dom";
 import { CardGallery } from "../../GlobalStyles";
-import { StyledSearch, Icon, SearchFeature } from "./Search.styled";
+import { StyledSearch, Icon, SearchFeature, Searching } from "./Search.styled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
@@ -42,7 +42,7 @@ export default function Search() {
   let searchResults = "";
   function typeofResult() {
     if (results === "loading") {
-      searchResults = <h1>Loading</h1>;
+      searchResults = <h1>Searching</h1>;
     } else if (results === "no results") {
       searchResults = <h1>No cards found</h1>;
     } else if (typeof results === "object") {
@@ -74,6 +74,7 @@ export default function Search() {
             id="Search"
             onChange={updateSearch}
             onKeyUp={handleKeyPress}
+            placeholder="Enter Card Name"
           />
           <Icon>
             <FontAwesomeIcon
@@ -84,8 +85,9 @@ export default function Search() {
             ></FontAwesomeIcon>
           </Icon>
         </SearchFeature>
+        {typeof results === "string" && <Searching>{searchResults}</Searching>}
       </StyledSearch>
-      <CardGallery>{results.length > 0 && searchResults}</CardGallery>
+      <CardGallery>{typeof results === "object" && searchResults}</CardGallery>
     </>
   );
 }
