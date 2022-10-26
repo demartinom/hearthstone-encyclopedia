@@ -9,4 +9,9 @@ export const LoadingStyled = styled.div`
   img {
     height: 50vh;
   }
+  h1{
+    font-size: 5rem;
+    font-family: var(--font-hearthstone);
+    color: var(--color-brown)
+  }
 `;
