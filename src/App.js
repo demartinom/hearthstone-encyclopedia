@@ -11,6 +11,7 @@ import SpecificSet from "./components/CardBySet/SpecificSet";
 import Favorites from "./components/Favorites/Favorites";
 import Search from "./components/Search/Search";
 import NavBar from "./components/NavBar/NavBar";
+import Loading from "./components/Loading/Loading";
 
 function App() {
   const [favorites, setFavorites] = React.useState([]);
@@ -36,7 +37,8 @@ function App() {
     return (
       <>
         <GlobalStyle />
-        <h1>loading</h1>
+        <NavBar />
+        <Loading />
       </>
     );
   } else {
