@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CardGallery } from "../../GlobalStyles";
 
 export default function Favorites(props) {
-  if (props.favorites === null) {
+  if (props.favorites.length === 0) {
     return <h1>No favorites yet!</h1>;
   } else {
     function removeAllFavorites() {
