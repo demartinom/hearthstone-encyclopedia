@@ -2,6 +2,7 @@ import React from "react";
 import { options } from "../../API-Options";
 import { Link } from "react-router-dom";
 import { CardGallery } from "../../GlobalStyles";
+import { StyledSearch } from "./Search.styled";
 
 export default function Search() {
   const [search, setSearch] = React.useState("");
@@ -57,7 +58,7 @@ export default function Search() {
     }
   }
   return (
-    <div>
+    <StyledSearch>
       <h1>Find a card</h1>
       <input
         type="search"
@@ -68,6 +69,6 @@ export default function Search() {
       />
       <button onClick={changeButton}>Search</button>
       <CardGallery>{results.length > 0 && searchResults}</CardGallery>
-    </div>
+    </StyledSearch>
   );
 }
