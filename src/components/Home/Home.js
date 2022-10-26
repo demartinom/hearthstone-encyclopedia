@@ -8,7 +8,7 @@ export default function Home() {
       <img src={logo} alt="hearthstone logo" />
       <h1>Hearthstone Encyclopedia</h1>
       <BodyText>
-        <h2>Welcome to Hearthstone Encyclopedia! </h2>
+        <h2>Welcome! </h2>
         <h2>
           Here you can find a database of all cards found within the game of
           Hearthstone produced by Blizzard Entertainment.
