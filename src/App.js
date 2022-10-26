@@ -14,14 +14,10 @@ import NavBar from "./components/NavBar/NavBar";
 import Loading from "./components/Loading/Loading";
 
 function App() {
-  const [favorites, setFavorites] = React.useState(null);
+  const [favorites, setFavorites] = React.useState("");
   React.useEffect(() => {
-    const savedFavorites = localStorage.getItem("favorites");
-    if (savedFavorites === null) {
-      setFavorites([]);
-    } else {
-      setFavorites(JSON.parse(savedFavorites));
-    }
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites"));
+    setFavorites(savedFavorites);
   }, []);
   React.useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
