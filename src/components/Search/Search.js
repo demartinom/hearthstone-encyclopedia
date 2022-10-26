@@ -58,17 +58,19 @@ export default function Search() {
     }
   }
   return (
-    <StyledSearch>
-      <h1>Find a card</h1>
-      <input
-        type="search"
-        name="Search"
-        id="Search"
-        onChange={updateSearch}
-        onKeyUp={handleKeyPress}
-      />
-      <button onClick={changeButton}>Search</button>
+    <>
+      <StyledSearch>
+        <h1>Find a card</h1>
+        <input
+          type="search"
+          name="Search"
+          id="Search"
+          onChange={updateSearch}
+          onKeyUp={handleKeyPress}
+        />
+        <button onClick={changeButton}>Search</button>
+      </StyledSearch>
       <CardGallery>{results.length > 0 && searchResults}</CardGallery>
-    </StyledSearch>
+    </>
   );
 }
