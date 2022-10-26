@@ -44,7 +44,11 @@ export default function Search() {
     } else if (results === "no results") {
       searchResults = <h1>No cards found</h1>;
     } else if (typeof results === "object") {
-      searchResults = results.map((card) => (
+      const noDuplicates = [
+        ...new Map(results.map((card) => [card.name, card])).values(),
+      ];
+      noDuplicates.sort((a, b) => (a.name > b.name ? 1 : -1));
+      searchResults = noDuplicates.map((card) => (
         <Link key={card.cardId} to={`/${card.playerClass}/${card.name}`}>
           <img src={card.img} alt="" />
         </Link>
