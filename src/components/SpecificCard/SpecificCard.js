@@ -39,27 +39,28 @@ export default function SpecificCard(props) {
         <img src={cardInfo.img} alt="" />
         <CardInfo>
           <CardName>
-            <h1>{cardInfo.name}</h1>
             {props.favorites.filter((e) => e.name === cardInfo.name).length ===
               0 ? (
-              <FontAwesomeIcon
+                <FontAwesomeIcon
                 icon={outlineStar}
                 size="2x"
                 onClick={addToFavorites}
-              />
-            ) : (
-              <FontAwesomeIcon
-                icon={solidStar}
-                size="2x"
-                onClick={removeFromFavorites}
-              />
-            )}
+                />
+                ) : (
+                  <FontAwesomeIcon
+                  icon={solidStar}
+                  size="2x"
+                  onClick={removeFromFavorites}
+                  />
+                  )}
+                  <h1>{cardInfo.name}</h1>
           </CardName>
           <h2>Set: {cardInfo.cardSet}</h2>
           <h2>Rarity: {cardInfo.rarity}</h2>
           {cardInfo.race && <p>Race: {cardInfo.race}</p>}
-          {cardInfo.spellSchool && <p>Spell School: {cardInfo.spellSchool}</p>}
-          {cardInfo.type === "Location" && <p>Type: {cardInfo.type}</p>}
+          {cardInfo.spellSchool && <h3>Spell School: {cardInfo.spellSchool}</h3>}
+          {cardInfo.type === "Location" && <h3>Type: {cardInfo.type}</h3>}
+          {cardInfo.type === "Weapon" && <h3>Type: {cardInfo.type}</h3>}
           <p>
             <em>{ReactHtmlParser(cardInfo.flavor)}</em>
           </p>
