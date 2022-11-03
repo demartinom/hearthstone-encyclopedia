@@ -17,7 +17,12 @@ export default function SpecificCard(props) {
     )
       .then((response) => response.json())
       .then((response) =>
-        setCardData(response.filter((card) => card.cardSet !== "Unknown"))
+        setCardData(
+          response.filter(
+            (card) =>
+              card.cardSet !== "Unknown" && !card.cardId.includes("CORE_ICC_")
+          )
+        )
       )
       .catch((err) => console.error(err));
     //eslint-disable-next-line react-hooks/exhaustive-deps

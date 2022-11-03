@@ -29,7 +29,8 @@ export default function SpecificClass() {
                     card.type === "Location" ||
                     card.type === "Weapon" ||
                     (card.type === "Hero" && card.rarity === "Legendary")) &&
-                  card.cardSet !== "Unknown"
+                  card.cardSet !== "Unknown" &&
+                  (!card.cardId.includes("CORE_ICC_"))
               )
             )
           )
