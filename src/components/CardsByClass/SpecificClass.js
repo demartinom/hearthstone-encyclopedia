@@ -5,6 +5,7 @@ import { SpecificClassStyled } from "./CardsByClass.styled";
 import { CardGallery } from "../../GlobalStyles";
 import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function SpecificClass() {
   const { name } = useParams();
@@ -46,7 +47,7 @@ export default function SpecificClass() {
         to={`/${classCard.playerClass}/${classCard.name}`}
         key={classCard.cardId}
       >
-        <img src={classCard.img} alt="" />
+        <LazyLoadImage src={classCard.img} alt="" />
       </Link>
     ));
     return (
