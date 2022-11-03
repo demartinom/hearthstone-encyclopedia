@@ -12,25 +12,29 @@ export default function SpecificClass() {
   const [classCards, setClassCards] = React.useState(null);
   React.useEffect(
     () => {
-      fetch(
-        `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/${name}?collectible=1`,
-        options
-      )
-        .then((response) => response.json())
-        .then((response) =>
-          setClassCards(
-            response.filter(
-              (card) =>
-                (card.type === "Minion" ||
-                  card.type === "Spell" ||
-                  card.type === "Location" ||
-                  card.type === "Weapon" ||
-                  (card.type === "Hero" && card.rarity === "Legendary")) &&
-                card.cardSet !== "Unknown"
+      if (JSON.parse(localStorage.getItem(`${name}`))) {
+        setClassCards(JSON.parse(localStorage.getItem(`${name}`)));
+      } else {
+        fetch(
+          `https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/${name}?collectible=1`,
+          options
+        )
+          .then((response) => response.json())
+          .then((response) =>
+            setClassCards(
+              response.filter(
+                (card) =>
+                  (card.type === "Minion" ||
+                    card.type === "Spell" ||
+                    card.type === "Location" ||
+                    card.type === "Weapon" ||
+                    (card.type === "Hero" && card.rarity === "Legendary")) &&
+                  card.cardSet !== "Unknown"
+              )
             )
           )
-        )
-        .catch((err) => console.error(err));
+          .catch((err) => console.error(err));
+      }
     },
     //eslint-disable-next-line react-hooks/exhaustive-deps
     []
@@ -38,6 +42,7 @@ export default function SpecificClass() {
   if (classCards === null) {
     return <Loading />;
   } else {
+    localStorage.setItem(`${name}`, JSON.stringify(classCards));
     const noDuplicates = [
       ...new Map(classCards.map((card) => [card.name, card])).values(),
     ];
