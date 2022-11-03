@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import background from "../../images/nav-background.jpg";
+import background from "../../images/nav-background.webp";
 
 export const NavBarStyled = styled.nav`
   display: flex;

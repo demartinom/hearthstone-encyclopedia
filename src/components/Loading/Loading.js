@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../images/round-logo.png";
+import logo from "../../images/round-logo.webp";
 import { LoadingStyled } from "./Loading.styling";
 
 export default function Loading() {

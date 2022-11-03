@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { HomeStyled, HomeLinks, BodyText } from "./Home.styled";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo.webp";
 export default function Home() {
   return (
     <HomeStyled>
