@@ -31,7 +31,7 @@ function App() {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
   const [metadata, setMetadata] = React.useState(null);
-  React.useState(() => {
+  React.useEffect(() => {
     fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/info", options)
       .then((response) => response.json())
       .then((response) => setMetadata(response))
