@@ -34,4 +34,5 @@ export const setArray = [
   { name: "Fractured in Alterac Valley", logo: "/set-logos/alteract.svg" },
   { name: "Voyage to the Sunken City", logo: "/set-logos/voyage.svg" },
   { name: "Murder at Castle Nathria", logo: "/set-logos/nathria.svg" },
+  { name: "March of the Lich King", logo: "set-logos/lich_king.svg" },
 ];
