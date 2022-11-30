@@ -4,13 +4,21 @@ import background from "./images/background.webp";
 
 export const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap');
+@font-face {
+  font-family: "Uncial";
+  src: url("/lhf_uncial_caps-webfont.woff2") format("woff2"),
+    url("/lhf_uncial_caps-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 :root{
-    --font-hearthstone: 'LHF Uncial Caps';
+    --font-hearthstone: 'Uncial';
     --font-serif: 'Merriweather', serif;
     --color-gold: #CAA949ff;
     --color-light-gold: #ECD0A0ff;
