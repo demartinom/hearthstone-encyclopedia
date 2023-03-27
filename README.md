@@ -6,7 +6,10 @@ The Hearthstone Encyclopedia is a database of cards available to collect in the 
 
 I was motivated to create this project to show off my proficiency in using APIs
 
+## Install
+Clone the repository: https://github.com/demartinom/hearthstone-encyclopedia.git
 
+Install all the required dependencies: npm install
 
 ## Features
 - Find cards by set
