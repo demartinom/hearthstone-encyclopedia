@@ -18,6 +18,9 @@ module.exports = {
       backgroundImage: {
         navBarBackground: "url('/nav-background.jpg')",
       },
+      fontFamily: {
+        uncial: "var(--font-uncial)",
+      },
     },
   },
   plugins: [],
