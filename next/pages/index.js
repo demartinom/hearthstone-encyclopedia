@@ -19,6 +19,12 @@ export default function Home({ test }) {
           Here you can find a database of all cards found within the game of
           Hearthstone produced by Blizzard Entertainment.
         </h3>
+        <li className="flex gap-3 md:gap-5">
+          <ul>Search by Class</ul>
+          <ul>Search by Set</ul>
+          <ul>Search all cards</ul>
+          <ul>See your favorites</ul>
+        </li>
       </div>
     </div>
   );
