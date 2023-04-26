@@ -15,6 +15,9 @@ module.exports = {
         hBlue: "#26AEE7",
         hBeige: "#E9D6AB",
       },
+      backgroundImage: {
+        navBarBackground: "url('/nav-background.jpg')",
+      },
     },
   },
   plugins: [],
