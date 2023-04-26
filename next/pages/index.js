@@ -1,8 +1,13 @@
 import React from "react";
 import axios from "axios";
+import NavBar from "@/components/navBar";
 
 export default function Home({ test }) {
-  return <div></div>;
+  return (
+    <>
+      <NavBar />
+    </>
+  );
 }
 
 export async function getServerSideProps() {
