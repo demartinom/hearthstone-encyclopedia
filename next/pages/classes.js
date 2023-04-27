@@ -7,11 +7,11 @@ import Image from "next/image";
 const Classes = ({ classData }) => {
   const classList = classData.map((gameClass) => (
     <Link href={`/classes/${gameClass.slug}`}>
-      <li>{gameClass.name}</li>
+      <li className="md:text-2xl">{gameClass.name}</li>
       {gameClass.slug !== "neutral" && (
         <Image
-          width={100}
-          height={100}
+          width={300}
+          height={300}
           src={`/class-logos/${gameClass.slug}.png`}
         ></Image>
       )}
@@ -20,9 +20,11 @@ const Classes = ({ classData }) => {
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
-      <ul className="items-center inline-grid grid-cols-3 text-center gap-6 font-uncial">
-        {classList}
-      </ul>
+      <div className="flex justify-center">
+        <ul className="items-center inline-grid grid-cols-3 text-center gap-x-6 md:gap-x-14 gap-y-10 font-uncial">
+          {classList}
+        </ul>
+      </div>
     </div>
   );
 };
