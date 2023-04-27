@@ -7,7 +7,7 @@ const NavBar = () => {
       <Link href="/">
         <h3 className="w-20 md:w-auto">Hearthstone Encyclopedia</h3>
       </Link>
-      <li className="flex justify-around w-36 md:w-auto gap-x-4 flex-wrap lg:gap-5">
+      <li className="flex justify-start w-36 md:w-auto gap-x-4 flex-wrap lg:gap-5">
         <Link href="/classes">
           <ul>Classes</ul>
         </Link>
