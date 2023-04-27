@@ -10,8 +10,8 @@ const Classes = ({ classData }) => {
       <li className="md:text-2xl">{gameClass.name}</li>
       {gameClass.slug !== "neutral" && (
         <Image
-          width={300}
-          height={300}
+          width={250}
+          height={250}
           src={`/class-logos/${gameClass.slug}.png`}
         ></Image>
       )}
@@ -20,8 +20,9 @@ const Classes = ({ classData }) => {
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
-      <div className="flex justify-center">
-        <ul className="items-center inline-grid grid-cols-3 text-center gap-x-6 md:gap-x-14 gap-y-10 font-uncial">
+      <h1 className="text-center font-uncial mt-6 text-4xl md:text-5xl">Choose a class</h1>
+      <div className="flex justify-center mt-10">
+        <ul className="items-center inline-grid grid-cols-3 text-center gap-x-6 md:gap-x-14 gap-y-7 font-uncial">
           {classList}
         </ul>
       </div>
