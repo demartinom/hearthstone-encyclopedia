@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 
 const uncialFont = localFont({
   src: "../public/lhf_uncial_caps-webfont.woff2",
