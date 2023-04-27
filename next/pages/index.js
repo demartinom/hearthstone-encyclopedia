@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import NavBar from "@/components/navBar";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home({ test }) {
   return (
@@ -20,7 +21,9 @@ export default function Home({ test }) {
           Hearthstone produced by Blizzard Entertainment.
         </h3>
         <li className="flex px-2 md:gap-5">
-          <ul>Search by Class</ul>
+          <Link href="/classes">
+            <ul>Search by Class</ul>
+          </Link>
           <ul>Search by Set</ul>
           <ul>Search all cards</ul>
           <ul>See your favorites</ul>
