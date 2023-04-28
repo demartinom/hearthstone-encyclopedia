@@ -17,8 +17,8 @@ const SpecificClass = ({ standardCards, wildCards, playClass }) => {
     .map((gameCard) => (
       <Image
         src={`${gameCard.image}`}
-        width={250}
-        height={250}
+        width={240}
+        height={240}
         alt="card"
       ></Image>
     ));
@@ -35,15 +35,33 @@ const SpecificClass = ({ standardCards, wildCards, playClass }) => {
       <h1 className="text-5xl md:text-7xl font-uncial text-center my-7">
         {currentClass}
       </h1>
-      {currentCards == "standard" ? (
-        <div className="flex justify-center">
-          <div className=" inline-grid md:gap-5 grid-cols-2 md:grid-cols-5">
+      <div className="flex justify-center gap-4">
+        <button
+          onClick={() => {
+            setCurrentCards("standard");
+          }}
+        >
+          Standard Cards
+        </button>
+        <button
+          onClick={() => {
+            setCurrentCards("wild");
+          }}
+        >
+          All Cards
+        </button>
+      </div>
+      <div className="flex justify-center">
+        {currentCards == "standard" ? (
+          <div className="inline-grid md:gap-5 grid-cols-2 md:grid-cols-5">
             {standardImages}
           </div>
-        </div>
-      ) : (
-        <div className="grid grid-cols-3 md:grid-cols-5">{wildImages}</div>
-      )}
+        ) : (
+          <div className="inline-grid md:gap-7 grid-cols-2 md:grid-cols-5">
+            {wildImages}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
