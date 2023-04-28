@@ -7,8 +7,8 @@ const SpecificClass = ({ standardCards, wildCards, playClass }) => {
   let standardImages = standardCards.map((gameCard) => (
     <Image
       src={`${gameCard.image}`}
-      width={200}
-      height={200}
+      width={250}
+      height={250}
       alt="card"
     ></Image>
   ));
@@ -17,8 +17,8 @@ const SpecificClass = ({ standardCards, wildCards, playClass }) => {
     .map((gameCard) => (
       <Image
         src={`${gameCard.image}`}
-        width={200}
-        height={200}
+        width={250}
+        height={250}
         alt="card"
       ></Image>
     ));
@@ -32,11 +32,17 @@ const SpecificClass = ({ standardCards, wildCards, playClass }) => {
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
-      <h1>{currentClass}</h1>
+      <h1 className="text-5xl md:text-7xl font-uncial text-center my-7">
+        {currentClass}
+      </h1>
       {currentCards == "standard" ? (
-        <div className="grid grid-cols-5">{standardImages}</div>
+        <div className="flex justify-center">
+          <div className=" inline-grid md:gap-5 grid-cols-2 md:grid-cols-5">
+            {standardImages}
+          </div>
+        </div>
       ) : (
-        <div className="grid grid-cols-5">{wildImages}</div>
+        <div className="grid grid-cols-3 md:grid-cols-5">{wildImages}</div>
       )}
     </div>
   );
