@@ -34,8 +34,9 @@ export default function Home({ test }) {
 }
 
 export async function getServerSideProps() {
-  axios.post(
+  let res = await axios.post(
     `https://us.battle.net/oauth/token?grant_type=client_credentials&client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}`
   );
+  process.env.API_TOKEN = res.data.access_token;
   return { props: { test: "" } };
 }
