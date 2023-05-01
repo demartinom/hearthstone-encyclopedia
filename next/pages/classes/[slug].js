@@ -2,25 +2,30 @@ import React from "react";
 import NavBar from "@/components/navBar";
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 
 const SpecificClass = ({ standardCards, wildCards, playClass }) => {
   let standardImages = standardCards.map((gameCard) => (
-    <Image
-      src={`${gameCard.image}`}
-      width={250}
-      height={250}
-      alt="card"
-    ></Image>
+    <Link href={`/cards/${gameCard.slug}`}>
+      <Image
+        src={`${gameCard.image}`}
+        width={250}
+        height={250}
+        alt="card"
+      ></Image>
+    </Link>
   ));
   let wildImages = wildCards
     .filter((gameCard) => !gameCard.copyOfCardId)
     .map((gameCard) => (
-      <Image
-        src={`${gameCard.image}`}
-        width={240}
-        height={240}
-        alt="card"
-      ></Image>
+      <Link href={`/cards/${gameCard.slug}`}>
+        <Image
+          src={`${gameCard.image}`}
+          width={240}
+          height={240}
+          alt="card"
+        ></Image>
+      </Link>
     ));
   const currentClass =
     playClass == "deathknight"
