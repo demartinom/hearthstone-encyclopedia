@@ -3,11 +3,17 @@ import NavBar from "@/components/navBar";
 import axios from "axios";
 import Image from "next/image";
 import classCodes from "@/card-data/classes";
+import setCodes from "@/card-data/sets";
+import rarityCodes from "@/card-data/rarities";
 
 const SingleCard = ({ cardInfo }) => {
-  let convertedClass = classCodes.filter((gameClass) => {
-    return gameClass.id == cardInfo.classId;
-  });
+  function dataConvert(cardData, infoId) {
+    let convertedData = cardData.filter((dataInfo) => {
+      return dataInfo.id == infoId;
+    });
+    return convertedData[0].name;
+  }
+  dataConvert(rarityCodes, cardInfo.rarityId);
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
@@ -21,7 +27,9 @@ const SingleCard = ({ cardInfo }) => {
           ></Image>
           <div>
             <h1>{cardInfo.name}</h1>
-            <p>Class: {convertedClass[0].cardClassName}</p>
+            <p>Set: {dataConvert(setCodes, cardInfo.cardSetId)}</p>
+            <p>Class: {dataConvert(classCodes, cardInfo.classId)}</p>
+            <p>Rarity: {dataConvert(rarityCodes, cardInfo.rarityId)}</p>
             <p dangerouslySetInnerHTML={{ __html: cardInfo.text }}></p>
           </div>
         </div>
