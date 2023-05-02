@@ -5,6 +5,8 @@ import Image from "next/image";
 import classCodes from "@/card-data/classes";
 import setCodes from "@/card-data/sets";
 import rarityCodes from "@/card-data/rarities";
+import minionTypeCodes from "@/card-data/minionTypes";
+import spellCodes from "@/card-data/spellTypes";
 
 const SingleCard = ({ cardInfo }) => {
   function dataConvert(cardData, infoId) {
@@ -13,7 +15,6 @@ const SingleCard = ({ cardInfo }) => {
     });
     return convertedData[0].name;
   }
-  dataConvert(rarityCodes, cardInfo.rarityId);
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
@@ -30,6 +31,23 @@ const SingleCard = ({ cardInfo }) => {
             <p>Set: {dataConvert(setCodes, cardInfo.cardSetId)}</p>
             <p>Class: {dataConvert(classCodes, cardInfo.classId)}</p>
             <p>Rarity: {dataConvert(rarityCodes, cardInfo.rarityId)}</p>
+            {cardInfo.spellSchoolId && (
+              <p>
+                Spell School: {dataConvert(spellCodes, cardInfo.spellSchoolId)}
+              </p>
+            )}
+            {cardInfo.minionTypeId && (
+              <p>
+                Minion Type:{" "}
+                {dataConvert(minionTypeCodes, cardInfo.minionTypeId)}
+              </p>
+            )}
+            {cardInfo.multiTypeIds && (
+              <p>
+                Secondary Minion Type:{" "}
+                {dataConvert(minionTypeCodes, cardInfo.multiTypeIds)}
+              </p>
+            )}
             <p dangerouslySetInnerHTML={{ __html: cardInfo.text }}></p>
           </div>
         </div>
