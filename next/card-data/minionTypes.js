@@ -1,4 +1,4 @@
-const typeCodes = [
+const minionTypeCodes = [
   {
     slug: "bloodelf",
     id: 1,
@@ -150,4 +150,4 @@ const typeCodes = [
   },
 ];
 
-export default typeCodes;
+export default minionTypeCodes;
