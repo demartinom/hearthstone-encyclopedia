@@ -11,7 +11,9 @@ const NavBar = () => {
         <Link href="/classes">
           <ul>Classes</ul>
         </Link>
-        <ul>Sets</ul>
+        <Link href="/sets">
+          <ul>Sets</ul>
+        </Link>
         <ul>Search</ul>
         <ul>Favorites</ul>
       </li>
