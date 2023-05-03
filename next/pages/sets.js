@@ -1,15 +1,24 @@
 import React from "react";
 import NavBar from "@/components/navBar";
 import axios from "axios";
+import Link from "next/link";
 
 const Sets = ({ setInfo, groupInfo }) => {
   const standardSets = setInfo
     .filter((cardSet) => groupInfo[9].cardSets.includes(cardSet.slug))
-    .map((cardSet) => <h1 className="font-uncial">{cardSet.name}</h1>);
+    .map((cardSet) => (
+      <Link href={`sets/${cardSet.slug}`}>
+        <h1 className="font-uncial">{cardSet.name}</h1>
+      </Link>
+    ));
   const wildSets = setInfo
     .filter((cardSet) => groupInfo[10].cardSets.includes(cardSet.slug))
     .filter((cardSet) => !groupInfo[9].cardSets.includes(cardSet.slug))
-    .map((cardSet) => <h1 className="font-uncial">{cardSet.name}</h1>);
+    .map((cardSet) => (
+      <Link href={`sets/${cardSet.slug}`}>
+        <h1 className="font-uncial">{cardSet.name}</h1>
+      </Link>
+    ));
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
