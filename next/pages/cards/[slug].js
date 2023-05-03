@@ -27,28 +27,41 @@ const SingleCard = ({ cardInfo }) => {
             alt="Card image"
           ></Image>
           <div>
-            <h1>{cardInfo.name}</h1>
-            <p>Set: {dataConvert(setCodes, cardInfo.cardSetId)}</p>
-            <p>Class: {dataConvert(classCodes, cardInfo.classId)}</p>
-            <p>Rarity: {dataConvert(rarityCodes, cardInfo.rarityId)}</p>
-            {cardInfo.spellSchoolId && (
-              <p>
-                Spell School: {dataConvert(spellCodes, cardInfo.spellSchoolId)}
+            <h1 className="font-uncial text-5xl">{cardInfo.name}</h1>
+            <div className="w-96">
+              <p className="text-xl italic">{cardInfo.flavorText}</p>
+              <p
+                className="text-xl mb-5"
+                dangerouslySetInnerHTML={{ __html: cardInfo.text }}
+              ></p>
+              <p className="text-lg">
+                Set: {dataConvert(setCodes, cardInfo.cardSetId)}
               </p>
-            )}
-            {cardInfo.minionTypeId && (
-              <p>
-                Minion Type:{" "}
-                {dataConvert(minionTypeCodes, cardInfo.minionTypeId)}
+              <p className="text-lg">
+                Class: {dataConvert(classCodes, cardInfo.classId)}
               </p>
-            )}
-            {cardInfo.multiTypeIds && (
-              <p>
-                Secondary Minion Type:{" "}
-                {dataConvert(minionTypeCodes, cardInfo.multiTypeIds)}
+              <p className="text-lg">
+                Rarity: {dataConvert(rarityCodes, cardInfo.rarityId)}
               </p>
-            )}
-            <p dangerouslySetInnerHTML={{ __html: cardInfo.text }}></p>
+              {cardInfo.spellSchoolId && (
+                <p className="text-lg">
+                  Spell School:{" "}
+                  {dataConvert(spellCodes, cardInfo.spellSchoolId)}
+                </p>
+              )}
+              {cardInfo.minionTypeId && (
+                <p className="text-lg">
+                  Minion Type:{" "}
+                  {dataConvert(minionTypeCodes, cardInfo.minionTypeId)}
+                </p>
+              )}
+              {cardInfo.multiTypeIds && (
+                <p className="text-lg">
+                  Secondary Minion Type:{" "}
+                  {dataConvert(minionTypeCodes, cardInfo.multiTypeIds)}
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>
