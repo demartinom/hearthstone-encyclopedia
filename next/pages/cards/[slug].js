@@ -35,13 +35,13 @@ const SingleCard = ({ cardInfo }) => {
                 dangerouslySetInnerHTML={{ __html: cardInfo.text }}
               ></p>
               <p className="text-lg">
-                Set: {dataConvert(setCodes, cardInfo.cardSetId)}
+                <b>Set</b>: {dataConvert(setCodes, cardInfo.cardSetId)}
               </p>
               <p className="text-lg">
-                Class: {dataConvert(classCodes, cardInfo.classId)}
+                <b>Class</b>: {dataConvert(classCodes, cardInfo.classId)}
               </p>
               <p className="text-lg">
-                Rarity: {dataConvert(rarityCodes, cardInfo.rarityId)}
+                <b>Rarity</b>: {dataConvert(rarityCodes, cardInfo.rarityId)}
               </p>
               {cardInfo.spellSchoolId && (
                 <p className="text-lg">
@@ -51,13 +51,13 @@ const SingleCard = ({ cardInfo }) => {
               )}
               {cardInfo.minionTypeId && (
                 <p className="text-lg">
-                  Minion Type:{" "}
+                  <b>Minion Type</b>:{" "}
                   {dataConvert(minionTypeCodes, cardInfo.minionTypeId)}
                 </p>
               )}
               {cardInfo.multiTypeIds && (
                 <p className="text-lg">
-                  Secondary Minion Type:{" "}
+                  <b>Secondary Minion Type</b>:{" "}
                   {dataConvert(minionTypeCodes, cardInfo.multiTypeIds)}
                 </p>
               )}
