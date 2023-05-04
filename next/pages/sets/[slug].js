@@ -12,17 +12,19 @@ const GameSet = ({ setData }) => {
       setData.filter((setCard) => gameClass.id == setCard.classId),
     ])
     .map((gameClass) => (
-      <div>
+      <div className="flex flex-col items-center">
         {gameClass[1].length > 1 && (
-          <h1 className="font-uncial">{gameClass[0].name}</h1>
+          <h1 className="font-uncial text-center text-3xl">
+            {gameClass[0].name}
+          </h1>
         )}
-        <div className="flex flex-wrap">
+        <div className="inline-grid grid-cols-6">
           {gameClass[1].map((setCard) => (
             <Link href={`/cards/${setCard.slug}`}>
               <Image
                 src={`${setCard.image}`}
-                width={200}
-                height={200}
+                width={225}
+                height={225}
                 key={setCard.slug}
               ></Image>
             </Link>
