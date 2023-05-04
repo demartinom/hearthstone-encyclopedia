@@ -29,9 +29,9 @@ const SingleCard = ({ cardInfo }) => {
           <div>
             <h1 className="font-uncial text-5xl">{cardInfo.name}</h1>
             <div className="w-96">
-              <p className="text-xl italic">{cardInfo.flavorText}</p>
+              <p className="text-lg italic text-gray-700">{cardInfo.flavorText}</p>
               <p
-                className="text-xl mb-5"
+                className="text-xl mt-3 mb-10"
                 dangerouslySetInnerHTML={{ __html: cardInfo.text }}
               ></p>
               <p className="text-lg">
