@@ -2,20 +2,35 @@ import React from "react";
 import NavBar from "@/components/navBar";
 import axios from "axios";
 import Image from "next/image";
+import classCodes from "@/card-data/classes";
 
 const GameSet = ({ setData }) => {
-  const cardImages = setData.map((setCard) => (
-    <Image
-      src={`${setCard.image}`}
-      width={200}
-      height={200}
-      key={setCard.slug}
-    ></Image>
-  ));
+  const classCards = classCodes
+    .map((gameClass) => [
+      { name: gameClass.name },
+      setData.filter((setCard) => gameClass.id == setCard.classId),
+    ])
+    .map((gameClass) => (
+      <div>
+        {gameClass[1].length > 1 && (
+          <h1 className="font-uncial">{gameClass[0].name}</h1>
+        )}
+        <div className="flex flex-wrap">
+          {gameClass[1].map((setCard) => (
+            <Image
+              src={`${setCard.image}`}
+              width={200}
+              height={200}
+              key={setCard.slug}
+            ></Image>
+          ))}
+        </div>
+      </div>
+    ));
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
-      {cardImages}
+      {classCards}
     </div>
   );
 };
