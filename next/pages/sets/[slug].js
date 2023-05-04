@@ -14,7 +14,7 @@ const GameSet = ({ setData }) => {
     .map((gameClass) => (
       <div className="flex flex-col items-center">
         {gameClass[1].length > 1 && (
-          <h1 className="font-uncial text-center text-3xl">
+          <h1 className="font-uncial text-center text-5xl mt-16">
             {gameClass[0].name}
           </h1>
         )}
