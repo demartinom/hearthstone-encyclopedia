@@ -1,4 +1,86 @@
-const minionTypeCodes = [
+export const spellCodes = [
+  {
+    slug: "arcane",
+    id: 1,
+    name: "Arcane",
+  },
+  {
+    slug: "fire",
+    id: 2,
+    name: "Fire",
+  },
+  {
+    slug: "frost",
+    id: 3,
+    name: "Frost",
+  },
+  {
+    slug: "nature",
+    id: 4,
+    name: "Nature",
+  },
+  {
+    slug: "holy",
+    id: 5,
+    name: "Holy",
+  },
+  {
+    slug: "shadow",
+    id: 6,
+    name: "Shadow",
+  },
+  {
+    slug: "fel",
+    id: 7,
+    name: "Fel",
+  },
+];
+
+export const cardTypeCodes = [
+  {
+    slug: "hero",
+    id: 3,
+    name: "Hero",
+    gameModes: [1, 4, 5],
+  },
+  {
+    slug: "minion",
+    id: 4,
+    name: "Minion",
+    gameModes: [1, 2, 4, 5, 6, 7],
+  },
+  {
+    slug: "spell",
+    id: 5,
+    name: "Spell",
+    gameModes: [1, 4, 5, 6],
+  },
+  {
+    slug: "weapon",
+    id: 7,
+    name: "Weapon",
+    gameModes: [1, 4, 5, 6],
+  },
+  {
+    slug: "hero power",
+    id: 10,
+    name: "HeroPower",
+    gameModes: [4],
+  },
+  {
+    slug: "location",
+    id: 39,
+    name: "Location",
+    gameModes: [1, 4, 5],
+  },
+  {
+    slug: "baconquestreward",
+    id: 40,
+    name: "Reward",
+  },
+];
+
+export const minionTypeCodes = [
   {
     slug: "bloodelf",
     id: 1,
@@ -149,5 +231,3 @@ const minionTypeCodes = [
     gameModes: [7],
   },
 ];
-
-export default minionTypeCodes;
