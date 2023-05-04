@@ -3,6 +3,7 @@ import NavBar from "@/components/navBar";
 import axios from "axios";
 import Image from "next/image";
 import classCodes from "@/card-data/classes";
+import Link from "next/link";
 
 const GameSet = ({ setData }) => {
   const classCards = classCodes
@@ -17,12 +18,14 @@ const GameSet = ({ setData }) => {
         )}
         <div className="flex flex-wrap">
           {gameClass[1].map((setCard) => (
-            <Image
-              src={`${setCard.image}`}
-              width={200}
-              height={200}
-              key={setCard.slug}
-            ></Image>
+            <Link href={`/cards/${setCard.slug}`}>
+              <Image
+                src={`${setCard.image}`}
+                width={200}
+                height={200}
+                key={setCard.slug}
+              ></Image>
+            </Link>
           ))}
         </div>
       </div>
