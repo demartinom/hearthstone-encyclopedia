@@ -5,8 +5,7 @@ import Image from "next/image";
 import classCodes from "@/card-data/classes";
 import setCodes from "@/card-data/sets";
 import rarityCodes from "@/card-data/rarities";
-import minionTypeCodes from "@/card-data/minionTypes";
-import spellCodes from "@/card-data/spellTypes";
+import { minionTypeCodes, spellCodes, cardTypeCodes } from "@/card-data/types";
 
 const SingleCard = ({ cardInfo }) => {
   function dataConvert(cardData, infoId) {
@@ -42,6 +41,12 @@ const SingleCard = ({ cardInfo }) => {
               <p className="text-lg">
                 <b>Class</b>: {dataConvert(classCodes, cardInfo.classId)}
               </p>
+              {(cardInfo.cardTypeId == 3 || cardInfo.cardTypeId == 39) && (
+                <p className="text-lg">
+                  <b>Card Type</b>:{" "}
+                  {dataConvert(cardTypeCodes, cardInfo.cardTypeId)}
+                </p>
+              )}
               <p className="text-lg">
                 <b>Rarity</b>: {dataConvert(rarityCodes, cardInfo.rarityId)}
               </p>
@@ -57,6 +62,7 @@ const SingleCard = ({ cardInfo }) => {
                   {dataConvert(minionTypeCodes, cardInfo.minionTypeId)}
                 </p>
               )}
+
               {cardInfo.multiTypeIds && (
                 <p className="text-lg">
                   <b>Secondary Minion Type</b>:{" "}
