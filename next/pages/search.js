@@ -22,14 +22,16 @@ const Search = () => {
         .get(`/api/search?name=${search}`)
         .then((res) =>
           setResults(
-            res.data.filter((card) =>
-              card.name.includes(search[0].toUpperCase() + search.substring(1))
-            )
+            res.data
+              .filter((card) =>
+                card.name.includes(
+                  search[0].toUpperCase() + search.substring(1)
+                )
+              )
+              .slice(0, 30)
           )
         )
         .then(setButtonClicked(false));
-              .slice(0, 30)
-          )
     }
   }, [buttonClicked]);
   let returnedCards = results.map((card) => (
@@ -44,7 +46,7 @@ const Search = () => {
     </Link>
   ));
   return (
-    <div>
+    <div className="bg-hBeige min-h-screen">
       <NavBar />
       <input
         type="search"
@@ -52,7 +54,9 @@ const Search = () => {
         placeholder="Enter Card Name"
       />
       <button onClick={changeButton}>Click</button>
-      {returnedCards}
+      <div className="grid grid-cols-5 gap-5 text-center items-center px-8 pb-10">
+        {returnedCards}
+      </div>
     </div>
   );
 };
