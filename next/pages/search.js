@@ -18,7 +18,13 @@ const Search = () => {
     if (buttonClicked == true) {
       axios
         .get(`/api/search?name=${search}`)
-        .then((res) => setResults(res.data))
+        .then((res) =>
+          setResults(
+            res.data.filter((card) =>
+              card.name.includes(search[0].toUpperCase() + search.substring(1))
+            )
+          )
+        )
         .then(setButtonClicked(false));
     }
   }, [buttonClicked]);
