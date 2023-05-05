@@ -27,7 +27,9 @@ export default function Home({ test }) {
           <Link href="/sets">
             <ul>Search by Set</ul>
           </Link>
-          <ul>Search all cards</ul>
+          <Link href="/search">
+            <ul>Search all cards</ul>
+          </Link>
           <ul>See your favorites</ul>
         </li>
       </div>

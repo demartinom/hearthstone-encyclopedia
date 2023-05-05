@@ -14,7 +14,9 @@ const NavBar = () => {
         <Link href="/sets">
           <ul>Sets</ul>
         </Link>
-        <ul>Search</ul>
+        <Link href="/search">
+          <ul>Search</ul>
+        </Link>
         <ul>Favorites</ul>
       </li>
     </nav>
