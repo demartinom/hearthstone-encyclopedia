@@ -52,7 +52,7 @@ const Search = () => {
         placeholder="Enter Card Name"
       />
       <button onClick={changeButton}>Click</button>
-      {returnedCards}
+        {returnedCards}
     </div>
   );
 };
