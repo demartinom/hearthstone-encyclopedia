@@ -36,8 +36,8 @@ const Search = () => {
     <Link href={`/cards/${card.slug}`}>
       <Image
         src={card.image}
-        width={100}
-        height={100}
+        width={225}
+        height={225}
         key={card.slug}
         alt="card image"
       ></Image>
@@ -52,7 +52,7 @@ const Search = () => {
         placeholder="Enter Card Name"
       />
       <button onClick={changeButton}>Click</button>
-        {returnedCards}
+      {returnedCards}
     </div>
   );
 };
