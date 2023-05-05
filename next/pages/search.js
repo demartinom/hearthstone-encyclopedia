@@ -22,14 +22,14 @@ const Search = () => {
         .get(`/api/search?name=${search}`)
         .then((res) =>
           setResults(
-            res.data
-              .filter((card) =>
-                card.name.includes(
-                  search[0].toUpperCase() + search.substring(1)
-                )
-              )
+            res.data.filter((card) =>
+              card.name.includes(search[0].toUpperCase() + search.substring(1))
+            )
+          )
         )
         .then(setButtonClicked(false));
+              .slice(0, 30)
+          )
     }
   }, [buttonClicked]);
   let returnedCards = results.map((card) => (
