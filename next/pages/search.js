@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import NavBar from "@/components/navBar";
 import axios from "axios";
+import Link from "next/link";
+import Image from "next/image";
 
 const Search = () => {
   const [search, setSearch] = React.useState("");
@@ -28,7 +30,17 @@ const Search = () => {
         .then(setButtonClicked(false));
     }
   }, [buttonClicked]);
-
+  let returnedCards = results.map((card) => (
+    <Link href={`/cards/${card.slug}`}>
+      <Image
+        src={card.image}
+        width={100}
+        height={100}
+        key={card.slug}
+        alt="card image"
+      ></Image>
+    </Link>
+  ));
   return (
     <div>
       <NavBar />
@@ -38,9 +50,7 @@ const Search = () => {
         placeholder="Enter Card Name"
       />
       <button onClick={changeButton}>Click</button>
-      {results.map((card) => (
-        <h1>{card.name}</h1>
-      ))}
+      {returnedCards}
     </div>
   );
 };
