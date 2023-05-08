@@ -14,6 +14,7 @@ export default function Home({ test }) {
           src="/logo.png"
           width={325}
           height={325}
+          alt="Hearthstone Logo"
         ></Image>
         <h1 className="text-5xl lg:text-6xl">Hearthstone Encyclopedia</h1>
         <h3 className="text-xl md:text-3xl px-10 md:px-48">
