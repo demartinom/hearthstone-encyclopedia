@@ -3,8 +3,19 @@ import axios from "axios";
 import NavBar from "@/components/navBar";
 import Image from "next/image";
 import Link from "next/link";
+import { useAppContext } from "@/state";
 
 export default function Home({ test }) {
+  const { favorites, setFavorites } = useAppContext();
+  React.useEffect(() => {
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites"));
+    if (savedFavorites === null) {
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    } else {
+      setFavorites(savedFavorites);
+    }
+  }, []);
+  console.log(favorites);
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
