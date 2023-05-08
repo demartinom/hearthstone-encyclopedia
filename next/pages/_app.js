@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import localFont from "next/font/local";
+import { AppWrapper } from "@/state";
 
 const uncialFont = localFont({
   src: "../public/lhf_uncial_caps-webfont.woff2",
@@ -9,8 +10,10 @@ const uncialFont = localFont({
 
 export default function App({ Component, pageProps }) {
   return (
-    <main className={uncialFont.variable}>
-      <Component {...pageProps} />
-    </main>
+    <AppWrapper>
+      <main className={uncialFont.variable}>
+        <Component {...pageProps} />
+      </main>
+    </AppWrapper>
   );
 }
