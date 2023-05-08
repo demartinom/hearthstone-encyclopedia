@@ -15,6 +15,11 @@ const Search = () => {
   function updateSearch(e) {
     setSearch(e.target.value);
   }
+  function handleKeyPress(e) {
+    if (e.key === "Enter") {
+      changeButton();
+    }
+  }
 
   useEffect(() => {
     if (buttonClicked == true) {
@@ -51,6 +56,7 @@ const Search = () => {
       <input
         type="search"
         onChange={updateSearch}
+        onKeyUp={handleKeyPress}
         placeholder="Enter Card Name"
       />
       <button onClick={changeButton}>Click</button>
