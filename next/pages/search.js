@@ -51,19 +51,31 @@ const Search = () => {
     </Link>
   ));
   return (
-    <div className="bg-hBeige min-h-screen">
+    <div className="bg-hBeige min-h-screen text-center">
       <NavBar />
       <h1>Search for cards by name</h1>
-      <input
-        type="search"
-        onChange={updateSearch}
-        onKeyUp={handleKeyPress}
-        placeholder="Enter Card Name"
-      />
-      <button onClick={changeButton}>Click</button>
-      <div className="grid grid-cols-5 gap-5 text-center items-center px-8 pb-10">
-        {returnedCards}
+      <div className="flex justify-center gap-3">
+        <input
+          type="search"
+          onChange={updateSearch}
+          onKeyUp={handleKeyPress}
+          className="w-1/4"
+          placeholder="Enter Card Name"
+        />
+        <button onClick={changeButton} className="bg-hOrange">
+          Search
+        </button>
       </div>
+      {returnedCards.length > 0 && (
+        <div className="grid grid-cols-5 gap-5 text-center items-center px-8 pb-10">
+          {returnedCards}
+        </div>
+      )}
+      {returnedCards.length == 0 && (
+        <div>
+          <h1>No Results</h1>
+        </div>
+      )}
     </div>
   );
 };
