@@ -30,7 +30,9 @@ export default function Home({ test }) {
           <Link href="/search">
             <ul>Search all cards</ul>
           </Link>
-          <ul>See your favorites</ul>
+          <Link href="/favorites">
+            <ul>See your favorites</ul>
+          </Link>
         </li>
       </div>
     </div>
