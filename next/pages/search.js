@@ -53,6 +53,7 @@ const Search = () => {
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
+      <h1>Search for cards by name</h1>
       <input
         type="search"
         onChange={updateSearch}
