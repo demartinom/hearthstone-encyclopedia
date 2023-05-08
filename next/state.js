@@ -4,7 +4,7 @@ import React from "react";
 const AppContext = createContext();
 
 export function AppWrapper({ children }) {
-  const [favorites, setFavorites] = React.useState("");
+  const [favorites, setFavorites] = React.useState([]);
 
   return (
     <AppContext.Provider value={{ favorites, setFavorites }}>
