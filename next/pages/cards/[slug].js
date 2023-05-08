@@ -6,6 +6,10 @@ import classCodes from "@/card-data/classes";
 import setCodes from "@/card-data/sets";
 import rarityCodes from "@/card-data/rarities";
 import { minionTypeCodes, spellCodes, cardTypeCodes } from "@/card-data/types";
+import { useAppContext } from "@/state";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
+import { faStar as outlineStar } from "@fortawesome/free-regular-svg-icons";
 
 const SingleCard = ({ cardInfo }) => {
   function dataConvert(cardData, infoId) {
@@ -14,11 +18,37 @@ const SingleCard = ({ cardInfo }) => {
     });
     return convertedData[0].name;
   }
+  const { favorites, setFavorites } = useAppContext();
+  function addToFavorites() {
+    setFavorites((prevFavorites) => [...prevFavorites, cardInfo]);
+  }
+  function removeFromFavorites() {
+    setFavorites((prevFavorites) =>
+      prevFavorites.filter((card) => card.slug !== cardInfo.slug)
+    );
+  }
+  React.useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
+  const isFavorite = favorites.filter((card) => card.slug == cardInfo.slug);
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
       <div className="flex justify-center mt-20">
         <div className="flex items-center">
+          {isFavorite.length == 0 ? (
+            <FontAwesomeIcon
+              icon={outlineStar}
+              size="2x"
+              onClick={addToFavorites}
+            />
+          ) : (
+            <FontAwesomeIcon
+              icon={solidStar}
+              size="2x"
+              onClick={removeFromFavorites}
+            />
+          )}
           <Image
             src={cardInfo.image}
             width={400}
