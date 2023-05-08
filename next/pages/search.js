@@ -7,7 +7,7 @@ import Image from "next/image";
 const Search = () => {
   const [search, setSearch] = React.useState("");
   const [buttonClicked, setButtonClicked] = React.useState(false);
-  const [results, setResults] = React.useState([]);
+  const [results, setResults] = React.useState(null);
 
   function changeButton() {
     setButtonClicked(true);
@@ -26,30 +26,34 @@ const Search = () => {
       axios
         .get(`/api/search?name=${search}`)
         .then((res) =>
-          setResults(
-            res.data
-              .filter((card) =>
-                card.name.includes(
-                  search[0].toUpperCase() + search.substring(1)
-                )
+          search == ""
+            ? setResults([])
+            : setResults(
+                res.data
+                  .filter((card) =>
+                    card.name.includes(
+                      search[0].toUpperCase() + search.substring(1)
+                    )
+                  )
+                  .slice(0, 30)
               )
-              .slice(0, 30)
-          )
         )
         .then(setButtonClicked(false));
     }
   }, [buttonClicked]);
-  let returnedCards = results.map((card) => (
-    <Link href={`/cards/${card.slug}`}>
-      <Image
-        src={card.image}
-        width={225}
-        height={225}
-        key={card.slug}
-        alt="card image"
-      ></Image>
-    </Link>
-  ));
+  let returnedCards =
+    results != null &&
+    results.map((card) => (
+      <Link href={`/cards/${card.slug}`}>
+        <Image
+          src={card.image}
+          width={225}
+          height={225}
+          key={card.slug}
+          alt="card image"
+        ></Image>
+      </Link>
+    ));
   return (
     <div className="bg-hBeige min-h-screen text-center">
       <NavBar />
