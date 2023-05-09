@@ -36,19 +36,6 @@ const SingleCard = ({ cardInfo }) => {
       <NavBar />
       <div className="flex justify-center mt-20">
         <div className="flex items-center">
-          {isFavorite.length == 0 ? (
-            <FontAwesomeIcon
-              icon={outlineStar}
-              size="2x"
-              onClick={addToFavorites}
-            />
-          ) : (
-            <FontAwesomeIcon
-              icon={solidStar}
-              size="2x"
-              onClick={removeFromFavorites}
-            />
-          )}
           <Image
             src={cardInfo.image}
             width={400}
@@ -56,7 +43,22 @@ const SingleCard = ({ cardInfo }) => {
             alt="Card image"
           ></Image>
           <div>
-            <h1 className="font-uncial text-5xl">{cardInfo.name}</h1>
+            <div className="flex items-center gap-2">
+              <h1 className="font-uncial text-5xl">{cardInfo.name}</h1>
+              {isFavorite.length == 0 ? (
+                <FontAwesomeIcon
+                  icon={outlineStar}
+                  size="2x"
+                  onClick={addToFavorites}
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={solidStar}
+                  size="2x"
+                  onClick={removeFromFavorites}
+                />
+              )}
+            </div>
             <div className="w-96">
               <p className="text-lg italic text-gray-700 mt-2">
                 {cardInfo.flavorText}
