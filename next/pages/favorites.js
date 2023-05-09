@@ -14,7 +14,23 @@ const Favorites = () => {
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
-      {favoritesList}
+      {favorites.length == 0 && (
+        <div>
+          <h1 className="font-uncial text-5xl text-center mt-32">
+            No Favorites Yet!
+          </h1>
+        </div>
+      )}
+      {favorites.length > 0 && (
+        <div>
+          <h1 className="font-uncial text-5xl text-center mt-8">
+            Your Favorites
+          </h1>
+          <div className="inline-grid md:gap-5 grid-cols-2 md:grid-cols-5">
+            {favoritesList}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
