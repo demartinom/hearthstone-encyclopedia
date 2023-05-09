@@ -15,7 +15,6 @@ export default function Home({ test }) {
       setFavorites(savedFavorites);
     }
   }, []);
-  console.log(favorites);
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
