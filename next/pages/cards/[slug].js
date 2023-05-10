@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as outlineStar } from "@fortawesome/free-regular-svg-icons";
 
-const SingleCard = ({ cardInfo }) => {
+const SingleCard = ({ cardInfo, childrenData }) => {
   function dataConvert(cardData, infoId) {
     let convertedData = cardData.filter((dataInfo) => {
       return dataInfo.id == infoId;
@@ -113,8 +113,24 @@ export async function getServerSideProps(context) {
   const res = await axios.get(
     `https://us.api.blizzard.com/hearthstone/cards/${context.params.slug}?locale=en_US&access_token=${process.env.API_TOKEN}`
   );
+
+  async function newChildren() {
+    let childrenData = [];
+    if (res.data.childIds) {
+      for (let i = 0; i < res.data.childIds.length; i++) {
+        let childRes = await axios.get(
+          `https://us.api.blizzard.com/hearthstone/cards/${res.data.childIds[i]}?locale=en_US&access_token=${process.env.API_TOKEN}`
+        );
+        childrenData.push(childRes.data);
+      }
+    }
+    return childrenData;
+  }
   return {
-    props: { cardInfo: JSON.parse(JSON.stringify(res.data)) },
+    props: {
+      cardInfo: JSON.parse(JSON.stringify(res.data)),
+      childrenData: JSON.parse(JSON.stringify(newChildren())),
+    },
   };
 }
 
