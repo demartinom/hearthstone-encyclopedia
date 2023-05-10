@@ -130,7 +130,9 @@ export async function getServerSideProps(context) {
   return {
     props: {
       cardInfo: JSON.parse(JSON.stringify(cardData)),
-      childrenData: JSON.parse(JSON.stringify(childrenData)),
+      childrenData: JSON.parse(
+        JSON.stringify(childrenData.filter((card) => card.collectible == 0))
+      ),
     },
   };
 }
