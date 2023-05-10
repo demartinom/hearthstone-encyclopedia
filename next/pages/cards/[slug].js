@@ -84,7 +84,7 @@ const SingleCard = ({ cardInfo, childrenData }) => {
               </p>
               {cardInfo.spellSchoolId && (
                 <p className="text-lg">
-                  Spell School:{" "}
+                  <b>Spell School</b>:{" "}
                   {dataConvert(spellCodes, cardInfo.spellSchoolId)}
                 </p>
               )}
