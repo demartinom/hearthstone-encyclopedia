@@ -110,26 +110,27 @@ const SingleCard = ({ cardInfo, childrenData }) => {
 };
 
 export async function getServerSideProps(context) {
-  const res = await axios.get(
-    `https://us.api.blizzard.com/hearthstone/cards/${context.params.slug}?locale=en_US&access_token=${process.env.API_TOKEN}`
-  );
-
-  async function newChildren() {
-    let childrenData = [];
-    if (res.data.childIds) {
-      for (let i = 0; i < res.data.childIds.length; i++) {
-        let childRes = await axios.get(
-          `https://us.api.blizzard.com/hearthstone/cards/${res.data.childIds[i]}?locale=en_US&access_token=${process.env.API_TOKEN}`
-        );
-        childrenData.push(childRes.data);
+  let cardData = [];
+  let childrenData = [];
+  await axios
+    .get(
+      `https://us.api.blizzard.com/hearthstone/cards/${context.params.slug}?locale=en_US&access_token=${process.env.API_TOKEN}`
+    )
+    .then((res) => (cardData = res.data))
+    .then(async () => {
+      if (cardData.childIds) {
+        for (let i = 0; i < cardData.childIds.length; i++) {
+          let childRes = await axios.get(
+            `https://us.api.blizzard.com/hearthstone/cards/${cardData.childIds[i]}?locale=en_US&access_token=${process.env.API_TOKEN}`
+          );
+          childrenData.push(childRes.data);
+        }
       }
-    }
-    return childrenData;
-  }
+    });
   return {
     props: {
-      cardInfo: JSON.parse(JSON.stringify(res.data)),
-      childrenData: JSON.parse(JSON.stringify(newChildren())),
+      cardInfo: JSON.parse(JSON.stringify(cardData)),
+      childrenData: JSON.parse(JSON.stringify(childrenData)),
     },
   };
 }
