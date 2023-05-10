@@ -109,9 +109,9 @@ const SingleCard = ({ cardInfo, childrenData }) => {
         </div>
       </div>
       {childrenData.length > 0 && (
-        <div>
-          <h1 className="text-4xl font-uncial">Related Cards</h1>
-          {childCards}
+        <div className="ml-7">
+          <h1 className="text-4xl font-uncial mb-5">Related Cards</h1>
+          <div className="flex gap-8">{childCards}</div>
         </div>
       )}
     </div>
