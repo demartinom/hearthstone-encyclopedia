@@ -31,6 +31,9 @@ const SingleCard = ({ cardInfo, childrenData }) => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
   const isFavorite = favorites.filter((card) => card.slug == cardInfo.slug);
+  const childCards = childrenData.map((child) => (
+    <Image src={child.image} height={250} width={250}></Image>
+  ));
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
@@ -105,6 +108,12 @@ const SingleCard = ({ cardInfo, childrenData }) => {
           </div>
         </div>
       </div>
+      {childrenData.length > 0 && (
+        <div>
+          <h1 className="text-4xl font-uncial">Related Cards</h1>
+          {childCards}
+        </div>
+      )}
     </div>
   );
 };
