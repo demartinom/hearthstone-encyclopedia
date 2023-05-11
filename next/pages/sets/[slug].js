@@ -18,7 +18,7 @@ const GameSet = ({ setData }) => {
             {gameClass[0].name}
           </h1>
         )}
-        <div className="inline-grid grid-cols-6">
+        <div className="inline-grid grid-cols-2 md:grid-cols-6">
           {gameClass[1].map((setCard) => (
             <Link href={`/cards/${setCard.slug}`}>
               <Image

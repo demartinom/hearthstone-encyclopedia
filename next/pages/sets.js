@@ -26,8 +26,7 @@ const Sets = ({ setInfo, groupInfo }) => {
         <h1 className="font-uncial text-center mt-10 mb-10 text-4xl">
           Standard Sets
         </h1>
-        <div className="grid grid-cols-6 gap-8 text-center items-center px-8">
-          {" "}
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 text-center items-center px-8">
           {standardSets}
         </div>
       </div>
@@ -35,7 +34,7 @@ const Sets = ({ setInfo, groupInfo }) => {
         <h1 className="font-uncial text-center mb-10 mt-16 text-4xl">
           Wild Sets
         </h1>
-        <div className="grid grid-cols-6 gap-8 text-center items-center px-8 pb-10">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 text-center items-center px-8 pb-10">
           {wildSets}
         </div>
       </div>

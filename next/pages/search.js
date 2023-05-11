@@ -63,7 +63,7 @@ const Search = () => {
           type="search"
           onChange={updateSearch}
           onKeyUp={handleKeyPress}
-          className="w-1/4 px-2 rounded-sm"
+          className="md:w-1/4 px-2 rounded-sm"
           placeholder="Enter a Card Name"
         />
         <button
@@ -74,7 +74,7 @@ const Search = () => {
         </button>
       </div>
       {returnedCards.length > 0 && (
-        <div className="grid grid-cols-5 gap-5 text-center items-center px-8 pb-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-5 text-center items-center px-8 pb-10">
           {returnedCards}
         </div>
       )}

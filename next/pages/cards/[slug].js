@@ -38,7 +38,7 @@ const SingleCard = ({ cardInfo, childrenData }) => {
     <div className="bg-hBeige min-h-screen">
       <NavBar />
       <div className="flex justify-center md:mt-20">
-        <div className="flex flex-col md:flex-row items-center">
+        <div className="flex flex-col mx-3 md:flex-row items-center">
           <Image
             src={cardInfo.image}
             width={400}
@@ -47,7 +47,7 @@ const SingleCard = ({ cardInfo, childrenData }) => {
           ></Image>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="font-uncial text-center text-5xl ">
+              <h1 className="font-uncial m-auto md:m-0 text-5xl ">
                 {cardInfo.name}
                 {isFavorite.length == 0 ? (
                   <FontAwesomeIcon
@@ -111,9 +111,13 @@ const SingleCard = ({ cardInfo, childrenData }) => {
         </div>
       </div>
       {childrenData.length > 0 && (
-        <div className="ml-7">
-          <h1 className="text-4xl font-uncial my-5">Related Cards</h1>
-          <div className="flex md:gap-8 flex-wrap">{childCards}</div>
+        <div className=" mx-3 md:ml-7">
+          <h1 className="text-4xl justify-center font-uncial my-5">
+            Related Cards
+          </h1>
+          <div className="flex justify-center md:justify-start md:gap-8 flex-wrap">
+            {childCards}
+          </div>
         </div>
       )}
     </div>
