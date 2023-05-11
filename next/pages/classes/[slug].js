@@ -42,6 +42,7 @@ const SpecificClass = ({ standardCards, wildCards, playClass }) => {
       </h1>
       <div className="flex justify-center gap-4">
         <button
+          className="bg-hBlue hover:bg-blue-500 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
           onClick={() => {
             setCurrentCards("standard");
           }}
@@ -49,6 +50,7 @@ const SpecificClass = ({ standardCards, wildCards, playClass }) => {
           Standard Cards
         </button>
         <button
+          className="bg-hBlue hover:bg-blue-500 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
           onClick={() => {
             setCurrentCards("wild");
           }}
