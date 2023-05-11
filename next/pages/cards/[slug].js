@@ -37,8 +37,8 @@ const SingleCard = ({ cardInfo, childrenData }) => {
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
-      <div className="flex justify-center mt-20">
-        <div className="flex items-center">
+      <div className="flex justify-center md:mt-20">
+        <div className="flex flex-col md:flex-row items-center">
           <Image
             src={cardInfo.image}
             width={400}
@@ -47,22 +47,24 @@ const SingleCard = ({ cardInfo, childrenData }) => {
           ></Image>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="font-uncial text-5xl">{cardInfo.name}</h1>
-              {isFavorite.length == 0 ? (
-                <FontAwesomeIcon
-                  icon={outlineStar}
-                  size="2x"
-                  onClick={addToFavorites}
-                />
-              ) : (
-                <FontAwesomeIcon
-                  icon={solidStar}
-                  size="2x"
-                  onClick={removeFromFavorites}
-                />
-              )}
+              <h1 className="font-uncial text-center text-5xl ">
+                {cardInfo.name}
+                {isFavorite.length == 0 ? (
+                  <FontAwesomeIcon
+                    icon={outlineStar}
+                    size="2xs"
+                    onClick={addToFavorites}
+                  />
+                ) : (
+                  <FontAwesomeIcon
+                    icon={solidStar}
+                    size="2xs"
+                    onClick={removeFromFavorites}
+                  />
+                )}
+              </h1>
             </div>
-            <div className="w-96">
+            <div className="md:w-96">
               <p className="text-lg italic text-gray-700 mt-2">
                 {cardInfo.flavorText}
               </p>
@@ -110,8 +112,8 @@ const SingleCard = ({ cardInfo, childrenData }) => {
       </div>
       {childrenData.length > 0 && (
         <div className="ml-7">
-          <h1 className="text-4xl font-uncial mb-5">Related Cards</h1>
-          <div className="flex gap-8">{childCards}</div>
+          <h1 className="text-4xl font-uncial my-5">Related Cards</h1>
+          <div className="flex md:gap-8 flex-wrap">{childCards}</div>
         </div>
       )}
     </div>
