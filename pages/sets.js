@@ -7,7 +7,7 @@ const Sets = ({ setInfo, groupInfo }) => {
   const standardSets = setInfo
     .filter((cardSet) => groupInfo[9].cardSets.includes(cardSet.slug))
     .map((cardSet) => (
-      <Link href={`sets/${cardSet.slug}`}>
+      <Link href={`sets/${cardSet.slug}`} key={cardSet.slug}>
         <h1 className="font-uncial text-xl">{cardSet.name}</h1>
       </Link>
     ));
