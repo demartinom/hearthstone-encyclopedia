@@ -4,6 +4,8 @@ import axios from "axios";
 import Image from "next/image";
 import classCodes from "@/card-data/classes";
 import Link from "next/link";
+import setCodes from "@/card-data/sets";
+import dataConvert from "@/card-data/convertData";
 
 const GameSet = ({ setData }) => {
   const classCards = classCodes
@@ -35,6 +37,9 @@ const GameSet = ({ setData }) => {
   return (
     <div className="bg-hBeige min-h-screen">
       <NavBar />
+      <h1 className="font-uncial text-6xl text-center mt-7">
+        {dataConvert(setCodes, setData[0].cardSetId)}
+      </h1>
       {classCards}
     </div>
   );
