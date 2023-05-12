@@ -10,14 +10,9 @@ import { useAppContext } from "@/state";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar as solidStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as outlineStar } from "@fortawesome/free-regular-svg-icons";
+import dataConvert from "@/card-data/convertData";
 
 const SingleCard = ({ cardInfo, childrenData }) => {
-  function dataConvert(cardData, infoId) {
-    let convertedData = cardData.filter((dataInfo) => {
-      return dataInfo.id == infoId;
-    });
-    return convertedData[0].name;
-  }
   const { favorites, setFavorites } = useAppContext();
   function addToFavorites() {
     setFavorites((prevFavorites) => [...prevFavorites, cardInfo]);
