@@ -1,5 +1,15 @@
 const setCodes = [
   {
+    id: 1858,
+    name: "TITANS",
+    slug: "titans",
+    type: "expansion",
+    collectibleCount: 145,
+    collectibleRevealedCount: 19,
+    nonCollectibleCount: 133,
+    nonCollectibleRevealedCount: 32,
+  },
+  {
     id: 1869,
     name: "Path of Arthas",
     slug: "path-of-arthas",
