@@ -1,8 +1,9 @@
 # Hearthstone Encyclopedia
 
-This project was created using React, styled-components, React Router, as well as the [Hearthstone API created by omgvamp](https://https://rapidapi.com/omgvamp/api/hearthstone/).
+## A database of cards available to collect in the Blizzard Entertainment game [Hearthstone](https://hearthstone.blizzard.com/en-us)
 
-The Hearthstone Encyclopedia is a database of cards available to collect in the Blizzard Entertainment game [Hearthstone](https://hearthstone.blizzard.com/en-us)
+This project was created using React, Next.js, Tailwind CSS as well as the [Official Hearthstone API](https://develop.battle.net/).
+
 
 I was motivated to create this project to show off my proficiency in using APIs
 
