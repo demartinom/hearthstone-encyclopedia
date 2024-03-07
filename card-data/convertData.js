@@ -1,6 +1,5 @@
 export default function dataConvert(cardData, infoId) {
-  let convertedData = cardData.filter((dataInfo) => {
-    return dataInfo.id == infoId;
-  });
-  return convertedData.name;
+  const convertedData = cardData.find((dataInfo) => dataInfo.id == infoId);
+  console.log(convertedData)
+  return convertedData ? convertedData.name : "Unknown";
 }
