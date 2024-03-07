@@ -4,37 +4,35 @@ import axios from "axios";
 import Link from "next/link";
 
 const Sets = ({ setInfo, groupInfo }) => {
+  const wildSets = setInfo.map((cardSet) => (
+    <Link href={`sets/${cardSet.slug}`} key={cardSet.slug}>
+      <h1 className="text-xl font-uncial">{cardSet.name}</h1>
+    </Link>
+  ));
   const standardSets = setInfo
-    .filter((cardSet) => groupInfo[9].cardSets.includes(cardSet.slug))
-    .map((cardSet) => (
-      <Link href={`sets/${cardSet.slug}`} key={cardSet.slug}>
-        <h1 className="font-uncial text-xl">{cardSet.name}</h1>
-      </Link>
-    ));
-  const wildSets = setInfo
     .filter((cardSet) => groupInfo[10].cardSets.includes(cardSet.slug))
     .filter((cardSet) => !groupInfo[9].cardSets.includes(cardSet.slug))
     .map((cardSet) => (
       <Link href={`sets/${cardSet.slug}`}>
-        <h1 className="font-uncial text-xl">{cardSet.name}</h1>
+        <h1 className="text-xl font-uncial">{cardSet.name}</h1>
       </Link>
     ));
   return (
-    <div className="bg-hBeige min-h-screen">
+    <div className="min-h-screen bg-hBeige">
       <NavBar />
       <div>
-        <h1 className="font-uncial text-center mt-10 mb-10 text-4xl">
+        <h1 className="mt-10 mb-10 text-4xl text-center font-uncial">
           Standard Sets
         </h1>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 text-center items-center px-8">
+        <div className="grid items-center grid-cols-2 gap-10 px-8 text-center md:grid-cols-6">
           {standardSets}
         </div>
       </div>
       <div>
-        <h1 className="font-uncial text-center mb-10 mt-16 text-4xl">
+        <h1 className="mt-16 mb-10 text-4xl text-center font-uncial">
           Wild Sets
         </h1>
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 text-center items-center px-8 pb-10">
+        <div className="grid items-center grid-cols-2 gap-10 px-8 pb-10 text-center md:grid-cols-6">
           {wildSets}
         </div>
       </div>
