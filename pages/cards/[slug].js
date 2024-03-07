@@ -30,10 +30,10 @@ const SingleCard = ({ cardInfo, childrenData }) => {
     <Image src={child.image} height={250} width={250}></Image>
   ));
   return (
-    <div className="bg-hBeige min-h-screen">
+    <div className="min-h-screen bg-hBeige">
       <NavBar />
       <div className="flex justify-center md:mt-20">
-        <div className="flex flex-col mx-3 md:flex-row items-center">
+        <div className="flex flex-col items-center mx-3 md:flex-row">
           <Image
             src={cardInfo.image}
             width={400}
@@ -42,7 +42,7 @@ const SingleCard = ({ cardInfo, childrenData }) => {
           ></Image>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="font-uncial m-auto md:m-0 text-5xl ">
+              <h1 className="m-auto text-5xl font-uncial md:m-0 ">
                 {cardInfo.name}
                 {isFavorite.length == 0 ? (
                   <FontAwesomeIcon
@@ -60,11 +60,11 @@ const SingleCard = ({ cardInfo, childrenData }) => {
               </h1>
             </div>
             <div className="md:w-96">
-              <p className="text-lg italic text-gray-700 mt-2">
+              <p className="mt-2 text-lg italic text-gray-700">
                 {cardInfo.flavorText}
               </p>
               <p
-                className="text-xl mt-2 mb-10"
+                className="mt-2 mb-10 text-xl"
                 dangerouslySetInnerHTML={{ __html: cardInfo.text }}
               ></p>
               <p className="text-lg">
@@ -106,11 +106,11 @@ const SingleCard = ({ cardInfo, childrenData }) => {
         </div>
       </div>
       {childrenData.length > 0 && (
-        <div className=" mx-3 md:ml-7">
-          <h1 className="text-4xl justify-center font-uncial my-5">
+        <div className="mx-3 md:ml-7">
+          <h1 className="justify-center my-5 text-4xl font-uncial">
             Related Cards
           </h1>
-          <div className="flex justify-center md:justify-start md:gap-8 flex-wrap">
+          <div className="flex flex-wrap justify-center md:justify-start md:gap-8">
             {childCards}
           </div>
         </div>
